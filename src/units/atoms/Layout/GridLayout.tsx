@@ -1,6 +1,7 @@
 
 import React, { PropsWithChildren } from 'react';
-import { jsx, css } from '@emotion/react'
+import { Box } from '../Box';
+
 
 export interface GridComponent {
   gridColumn: string;
@@ -27,21 +28,21 @@ const GridContainer = ({
   className,
 }: PropsWithChildren<IGridContainer>) => {
   return (
-    <div
+    <Box
       className={className}
-      css={css`
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(
+      sx={{
+        height:'100%',
+        display:'grid',
+        gridTemplateColumns:`repeat(
           auto-fill,
           minmax(${100 / column}%, auto)
-        );
-        grid-template-rows: repeat(auto-fill, minmax(${100 / row}%, auto));
-        overflow: hidden;
-      `}
+        )`,
+        gridTemplateRows: `repeat(auto-fill, minmax(${100 / row}%, auto))`,
+        overflow:'hidden'
+      }}
     >
       {children}
-    </div>
+    </Box>
   );
 };
 
@@ -54,16 +55,12 @@ export const GridLayout = ({
     <GridContainer {...gridContainer} className={className}>
       {gridItems.map((gridItem: GridComponent, idx: number) => {
         return (
-          <div
+          <Box
             key={idx}
-            css={css`
-              grid-column: ${gridItem.gridColumn};
-              grid-row: ${gridItem.gridRow};
-              z-index: ${(gridItems.length - idx) * 10};
-            `}
+            sx={{gridColumn: gridItem.gridColumn, gridRow:gridItem.gridRow, zIndex:(gridItems.length - idx) * 10}}
           >
             {gridItem.component}
-          </div>
+          </Box>
         );
       })}
     </GridContainer>

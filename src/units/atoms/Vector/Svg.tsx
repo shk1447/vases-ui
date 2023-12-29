@@ -1,6 +1,5 @@
+import { styled } from '@mui/material';
 import React, { cloneElement, PropsWithChildren } from 'react';
-
-import { jsx, css } from '@emotion/react'
 
 export interface SvgProps {
   size?: any;
@@ -24,6 +23,7 @@ export const CalculateRevertRatio = ({ width, height }: CalculateRatioProps) => 
   wRatio: 1920 / width,
   hRatio: 1080 / height
 });
+styled
 
 export const Svg = ({
   size,
@@ -37,11 +37,11 @@ export const Svg = ({
       className={className}
       width={width}
       height={height}
-      css={css`
-        position: absolute;
-        top: ${top}px;
-        left: ${left}px;
-      `}
+      style={{
+        position: 'absolute',
+        top: `${top}px`,
+        left: `${left}px`
+      }}
     >
       {children}
     </svg>

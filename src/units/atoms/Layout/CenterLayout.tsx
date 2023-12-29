@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { jsx, css } from '@emotion/react'
 import { Grid, GridDirection } from '@mui/material';
 
 export interface CenterLayoutProps {
@@ -19,11 +18,11 @@ export const CenterLayout = ({
       className={className}
       container
       direction={direction}
-      css={css`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      `}
+      sx={{
+        display:'flex',
+        alignItems:'center',
+        justifyContent: 'center'
+      }}
     >
       {children}
     </Grid>

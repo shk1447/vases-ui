@@ -1,6 +1,9 @@
 
-import { jsx, css } from '@emotion/react'
+
+
+import { css } from '@mui/material';
 import React, { useMemo } from 'react';
+import { Box } from '../Box';
 
 export interface CardGridProps {
   cards: React.ReactNode[] | Element[];
@@ -42,18 +45,18 @@ export const CardGrid = (props: CardGridProps) => {
   const cardsMemo = useMemo(() => {
     return cards.map((item, j) => {
       return (
-        <div css={CardStyle(cardSize.height)} key={j}>
+        <Box css={CardStyle(cardSize.height)} key={j}>
           {item}
-        </div>
+        </Box>
       );
     });
   }, [cards]);
 
   return (
     <>
-      <div className={className} css={ContainerStyle(gap, cardSize.width)}>
+      <Box className={className} css={ContainerStyle(gap, cardSize.width)}>
         {cardsMemo}
-      </div>
+      </Box>
     </>
   );
 };

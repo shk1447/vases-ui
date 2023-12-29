@@ -1,6 +1,6 @@
+import { styled } from "@mui/material/styles";
 import React, { DOMAttributes } from "react";
-import styled from "@emotion/styled";
-import { css, SerializedStyles } from "@emotion/react";
+
 
 type MouseEvents = Pick<
   DOMAttributes<HTMLDivElement>,
@@ -13,14 +13,10 @@ export interface FlexLayoutProps extends MouseEvents {
   children?: React.ReactNode;
   className?: string;
 }
+const StyledContainer = styled('div')({display:'flex'})
 
-const StyledContainer = styled.div`
-  display: flex;
-`;
+const StyledSpacer = styled('div')({'flex': 1})
 
-const StyledSpacer = styled.div`
-  flex: 1;
-`;
 
 export const FlexLayout = ({ ...props }: FlexLayoutProps) => {
   const { className, gap, direction, children } = props;
@@ -29,10 +25,7 @@ export const FlexLayout = ({ ...props }: FlexLayoutProps) => {
     <StyledContainer
       {...props}
       className={className}
-      css={css`
-        flex-direction: ${direction};
-        gap: ${gap}px;
-      `}
+      sx={{flexDirection:direction,gap:`${gap}px`}}
     >
       {children}
     </StyledContainer>

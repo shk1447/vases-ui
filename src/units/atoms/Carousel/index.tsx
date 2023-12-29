@@ -1,5 +1,3 @@
-
-import { jsx, css } from '@emotion/react'
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import ListItem from '@mui/material/ListItem/ListItem';
@@ -7,6 +5,7 @@ import { IconButton } from '../IconButton';
 import { ICON_Next, ICON_Prev } from '../../styles/icons';
 import { LoadingOverlay } from '../../molecules/LoadingOverlay';
 import { useResizeDetector } from 'react-resize-detector';
+import { Box } from '../Box';
 
 type SlideOption = {
   index: number;
@@ -73,9 +72,10 @@ export const Carousel = <K extends keyof OptionMap>(
             <>Loading....</>
           ) : (
             <img
-              css={css`
-                ${(option as ScrollOption).frame ? 'height: 100%;width:100%;' : ''}
-              `}
+              style={(option as ScrollOption).frame ? {
+                width:'100%',
+                height:'100%'
+              } : {} }
               onLoad={onImgLoad}
               alt=""
               src={items[index]}
@@ -115,47 +115,49 @@ export const Carousel = <K extends keyof OptionMap>(
 
       case 'slide': {
         return (
-          <div
+          <Box
             className={className}
-            css={css`
-              border: 1px solid white;
-              position: relative;
-              height: 100%;
-            `}
+            sx={{
+              border:'1px solid white',
+              position:'relative',
+              height:'100%'
+            }}
           >
             <img
-              css={css`
-                position: absolute;
-                height: 100%;
-                width: 100%;
-              `}
+            style={{
+              position: 'absolute',
+                height: '100%',
+                width: '100%',
+            }}
+              
               alt=""
               src={items[idx]}
             />
             <IconButton
               onClick={() => setIdx(idx == 0 ? items.length - 1 : idx - 1)}
-              css={css`
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translate(0%, -50%);
-              `}
+              sx={{
+                position: 'absolute',
+                left: '0',
+                top: '50%',
+                transform: 'translate(0%, -50%)'
+              }}
+              
             >
               <ICON_Prev />
             </IconButton>
 
             <IconButton
               onClick={() => setIdx(idx == items.length - 1 ? 0 : idx + 1)}
-              css={css`
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translate(0%, -50%);
-              `}
+              sx={{
+                position: 'absolute',
+                right: '0',
+                top: '50%',
+                transform: 'translate(0%, -50%)',
+              }}
             >
               <ICON_Next />
             </IconButton>
-          </div>
+          </Box>
         );
       }
     }
@@ -173,11 +175,11 @@ export const Carousel = <K extends keyof OptionMap>(
     <div
       // style={{ height: '100%', width: '100%' }}
       className={className}
-      css={css`
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-      `}
+      style={{
+        height: '100%',
+        width: '100%',
+        overflow: 'hidden',
+      }}
       ref={containerRef}
     >
       {renderItems}

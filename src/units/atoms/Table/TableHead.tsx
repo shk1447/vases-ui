@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { jsx, css } from '@emotion/react'
-import { styled, TableHead as _TableHead } from '@mui/material';
+
+import { styled, TableHead as _TableHead, css } from '@mui/material';
 
 export interface TableHeadProps {
   children?: React.ReactNode;

@@ -10,9 +10,7 @@ const StyledTextField = styled(({ ...props }: TextFieldProps) => (
   <_TextField {...props} />
 ))(({ theme: _ }) => {
   return {
-    '& div>.MuiInputBase-input': {
-      padding: '7px 14px !important',
-    },
+    
   };
 });
 
