@@ -1,3 +1,4 @@
+/// <reference types="react" />
 declare type SlideOption = {
     index: number;
 };
@@ -17,5 +18,5 @@ export interface CarouselProps<K extends keyof OptionMap> {
     useLoading?: boolean;
     onRenderItem?: (path: string, idx: number, isScrolling: boolean | undefined) => any;
 }
-export declare const Carousel: <K extends keyof OptionMap>(props: CarouselProps<K>) => import("@emotion/react/jsx-runtime").JSX.Element;
+export declare const Carousel: <K extends keyof OptionMap>(props: CarouselProps<K>) => JSX.Element;
 export {};

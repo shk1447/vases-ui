@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { CarouselProps } from '../../units/atoms/Carousel';
 declare const _default: {
     title: string;
@@ -9,7 +10,7 @@ declare const _default: {
             frame?: number | undefined;
             loading?: boolean | undefined;
         };
-    }>(props: CarouselProps<K>) => import("@emotion/react/jsx-runtime").JSX.Element;
+    }>(props: CarouselProps<K>) => JSX.Element;
     argTypes: {
         type: {
             control: {
@@ -42,7 +43,7 @@ declare type OptionMap = {
     scroll: ScrollOption;
 };
 export declare const Default: {
-    (props: CarouselProps<keyof OptionMap>): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: CarouselProps<keyof OptionMap>): JSX.Element;
     storyName: string;
     args: {
         type: string;

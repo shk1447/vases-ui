@@ -16,7 +16,7 @@ declare const _default: {
 };
 export default _default;
 export declare const Default: {
-    (props: PropsWithChildren<AlertProps>): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: PropsWithChildren<AlertProps>): JSX.Element;
     storyName: string;
     args: {
         severity: string;

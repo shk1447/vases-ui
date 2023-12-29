@@ -6,7 +6,7 @@ declare const _default: {
 };
 export default _default;
 export declare const Default: {
-    (props: DockLayoutProps): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: DockLayoutProps): JSX.Element;
     storyName: string;
     args: {
         defaultLayout: {
@@ -38,7 +38,7 @@ export declare const Default: {
                     tabs: {
                         id: string;
                         title: string;
-                        content: import("@emotion/react/jsx-runtime").JSX.Element;
+                        content: JSX.Element;
                         closable: boolean;
                     }[];
                     x: number;

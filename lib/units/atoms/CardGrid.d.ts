@@ -8,4 +8,4 @@ export interface CardGridProps {
     };
     className?: string;
 }
-export declare const CardGrid: (props: CardGridProps) => import("@emotion/react/jsx-runtime").JSX.Element;
+export declare const CardGrid: (props: CardGridProps) => JSX.Element;

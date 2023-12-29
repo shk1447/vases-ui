@@ -24,7 +24,7 @@ declare const _default: {
 };
 export default _default;
 export declare const Default: {
-    (props: BaseChartProps): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: BaseChartProps): JSX.Element;
     StoryName: string;
     args: {
         option: {
@@ -72,7 +72,7 @@ export declare const Default: {
     };
 };
 export declare const Gauge: {
-    (props: GaugeChartProps): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: GaugeChartProps): JSX.Element;
     StoryName: string;
     args: {
         title: string;
@@ -85,7 +85,7 @@ export declare const Gauge: {
     };
 };
 export declare const Line: {
-    (props: LineChartProps): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: LineChartProps): JSX.Element;
     StoryName: string;
     args: {
         title: string;

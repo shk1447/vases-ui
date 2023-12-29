@@ -6,7 +6,7 @@ declare const _default: {
 };
 export default _default;
 export declare const Default: {
-    (props: FlexLayoutProps): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: FlexLayoutProps): JSX.Element;
     storyName: string;
     args: {
         direction: string;

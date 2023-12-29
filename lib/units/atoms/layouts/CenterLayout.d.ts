@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { GridDirection } from '@mui/material';
 export interface CenterLayoutProps {
@@ -6,4 +5,4 @@ export interface CenterLayoutProps {
     children?: React.ReactNode;
     className?: string;
 }
-export declare const CenterLayout: ({ direction, children, className, }: CenterLayoutProps) => import("@emotion/react/jsx-runtime").JSX.Element;
+export declare const CenterLayout: ({ direction, children, className, }: CenterLayoutProps) => JSX.Element;

@@ -11,4 +11,4 @@ export interface LoadingOverlayProps {
     className?: string;
     onCancel?: () => void;
 }
-export declare const LoadingOverlay: ({ active, message, children, type, className, progressInfo, onCancel, }: LoadingOverlayProps) => import("@emotion/react/jsx-runtime").JSX.Element;
+export declare const LoadingOverlay: ({ active, message, children, type, className, progressInfo, onCancel, }: LoadingOverlayProps) => JSX.Element;

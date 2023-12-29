@@ -2,7 +2,7 @@
 import { CardGridProps } from '../../units/atoms/CardGrid';
 declare const _default: {
     title: string;
-    component: (props: CardGridProps) => import("@emotion/react/types/jsx-namespace").EmotionJSX.Element;
+    component: (props: CardGridProps) => JSX.Element;
     argTypes: {
         gap: {
             control: string;

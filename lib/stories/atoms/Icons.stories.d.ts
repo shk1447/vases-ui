@@ -1,11 +1,12 @@
+/// <reference types="react" />
 export declare const Icons: (props: {
     icon: string;
-}) => import("@emotion/react/jsx-runtime").JSX.Element;
+}) => JSX.Element;
 declare const _default: {
     title: string;
     component: (props: {
         icon: string;
-    }) => import("@emotion/react/jsx-runtime").JSX.Element;
+    }) => JSX.Element;
     argTypes: {
         icon: {
             control: string;

@@ -1,4 +1,3 @@
-
 import React from 'react';
 export interface TabItem {
     value: string;
@@ -14,4 +13,4 @@ export interface TabWithActionsProps {
     onChange?: (activeItem: string) => void;
     children?: React.ReactNode;
 }
-export declare const TabWithActions: ({ height, className, activeItem, tabItems, actions, children, onChange, }: TabWithActionsProps) => import("@emotion/react/jsx-runtime").JSX.Element;
+export declare const TabWithActions: ({ height, className, activeItem, tabItems, actions, children, onChange, }: TabWithActionsProps) => JSX.Element;

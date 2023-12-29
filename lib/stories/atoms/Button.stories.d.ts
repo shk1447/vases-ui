@@ -6,7 +6,7 @@ declare const _default: {
 };
 export default _default;
 export declare const Default: {
-    (props: PropsWithChildren<ButtonProps>): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: PropsWithChildren<ButtonProps>): JSX.Element;
     storyName: string;
     args: {
         children: string;

@@ -23,7 +23,7 @@ declare const _default: {
 };
 export default _default;
 export declare const Default: {
-    (props: VideoProps<keyof ParamsMap>): import("@emotion/react/jsx-runtime").JSX.Element;
+    (props: VideoProps<keyof ParamsMap>): JSX.Element;
     storyName: string;
     parameters: {
         docs: {

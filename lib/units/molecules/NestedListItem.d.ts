@@ -1,4 +1,3 @@
-
 import React from 'react';
 export interface NestedListItemProps {
     className?: string;
@@ -8,4 +7,4 @@ export interface NestedListItemProps {
     children?: React.ReactNode;
     onClick?: (e: any) => void;
 }
-export declare const NestedListItem: (props: NestedListItemProps) => import("@emotion/react/jsx-runtime").JSX.Element;
+export declare const NestedListItem: (props: NestedListItemProps) => JSX.Element;

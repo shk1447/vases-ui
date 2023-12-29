@@ -8,8 +8,8 @@ export declare const StyledText: import("@emotion/styled").StyledComponent<{
     className?: string | undefined;
     scaleToFit?: boolean | "shrink-only" | undefined;
     angle?: number | undefined;
-    textAnchor?: "inherit" | "start" | "end" | "middle" | undefined;
-    verticalAnchor?: "start" | "end" | "middle" | undefined;
+    textAnchor?: "inherit" | "end" | "start" | "middle" | undefined;
+    verticalAnchor?: "end" | "start" | "middle" | undefined;
     style?: React.CSSProperties | undefined;
     innerRef?: React.Ref<SVGSVGElement> | undefined;
     innerTextRef?: React.Ref<SVGTextElement> | undefined;
@@ -28,8 +28,8 @@ export declare const StyledText: import("@emotion/styled").StyledComponent<{
     className?: string | undefined;
     scaleToFit?: boolean | "shrink-only" | undefined;
     angle?: number | undefined;
-    textAnchor?: "inherit" | "start" | "end" | "middle" | undefined;
-    verticalAnchor?: "start" | "end" | "middle" | undefined;
+    textAnchor?: "inherit" | "end" | "start" | "middle" | undefined;
+    verticalAnchor?: "end" | "start" | "middle" | undefined;
     style?: React.CSSProperties | undefined;
     innerRef?: React.Ref<SVGSVGElement> | undefined;
     innerTextRef?: React.Ref<SVGTextElement> | undefined;

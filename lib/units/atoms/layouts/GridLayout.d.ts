@@ -1,4 +1,3 @@
-
 import React from 'react';
 export interface GridComponent {
     gridColumn: string;
@@ -15,4 +14,4 @@ export interface IGridLayout {
     gridItems: GridComponent[];
     className?: string;
 }
-export declare const GridLayout: ({ gridContainer, gridItems, className, }: IGridLayout) => import("@emotion/react/jsx-runtime").JSX.Element;
+export declare const GridLayout: ({ gridContainer, gridItems, className, }: IGridLayout) => JSX.Element;
