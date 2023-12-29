@@ -3,7 +3,7 @@ import { IconButton } from '../../../atoms/IconButton';
 import {
   TabWithActions,
   TabWithActionsProps,
-} from '../TabWithAction';
+} from '..';
 import { ICON_Save } from '../../../styles/icons';
 import { action } from '@storybook/addon-actions';
 

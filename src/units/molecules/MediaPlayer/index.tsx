@@ -38,7 +38,7 @@ export type RtspParams = {
   server: string;
 };
 
-export type ParamsMap = {
+export type MediaPlayerParamsMap = {
   file: FileParams;
   rtsp: RtspParams;
   local: undefined;
@@ -72,13 +72,13 @@ const PlaySlider = styled(Slider)(() => ({
   },
 }));
 
-export interface MediaPlayerProps<K extends keyof ParamsMap> {
+export interface MediaPlayerProps<K extends keyof MediaPlayerParamsMap> {
   className?: string;
   type: K;
   autoPlay?: boolean;
   muted?: boolean;
   controls?: boolean;
-  params?: ParamsMap[K];
+  params?: MediaPlayerParamsMap[K];
   onLoaded?: () => void;
   onResize?: () => void;
   onClick?: () => void;
@@ -90,7 +90,7 @@ export type MediaPlayerHandle = {
 };
 
 const _Video = forwardRef(
-  <T extends keyof ParamsMap>(
+  <T extends keyof MediaPlayerParamsMap>(
     {
       className,
       type,
