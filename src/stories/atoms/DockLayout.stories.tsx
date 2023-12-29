@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/react'
 import React, { PropsWithChildren } from 'react';
 
-import { DockLayout, DockLayoutProps } from '../../units/atoms/DockLayout';
+import { DockLayout, DockLayoutProps } from '../../units/atoms/Layout/DockLayout';
 
 export default {
   title: 'VASES-UI/Atoms/DockLayout',

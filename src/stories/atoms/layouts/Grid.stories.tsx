@@ -5,7 +5,7 @@ import {
   GridLayout,
   IGridContainer,
   IGridLayout,
-} from '../../../units/atoms/layouts/GridLayout';
+} from '../../../units/atoms/Layout/GridLayout';
 
 export default {
   title: 'VASES-UI/Layout/Grid',

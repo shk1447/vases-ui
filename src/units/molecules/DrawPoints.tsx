@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle } from '../atoms/visualization/Circle';
+import { Circle } from '../atoms/Vector/Circle';
 
 export interface PointProps {
   /** x 좌표 */

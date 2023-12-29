@@ -1,6 +1,6 @@
 import { css } from '@mui/material';
 import React, { memo } from 'react';
-import { FlexLayout } from '../../../../../atoms/layouts/FlexLayout';
+import { FlexLayout } from '../../../../../atoms/Layout/FlexLayout';
 import { LabelingToolbarProps } from '../../Interfaces/UI/Toolbar';
 
 const toolbarContainer_styled = (align: string) => {

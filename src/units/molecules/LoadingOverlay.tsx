@@ -6,9 +6,9 @@ import CircularProgress from '@mui/material/CircularProgress/CircularProgress';
 import React, { useEffect, useState } from 'react';
 import { Box } from '../atoms/Box';
 import { Button } from '../atoms/Button';
-import { CenterLayout } from '../atoms/layouts/CenterLayout';
-import { FlexLayout } from '../atoms/layouts/FlexLayout';
-import { CustomLinearProgress } from '../atoms/LinearProgress';
+import { CenterLayout } from '../atoms/Layout/CenterLayout';
+import { FlexLayout } from '../atoms/Layout/FlexLayout';
+import { CustomLinearProgress } from '../atoms/Progress/LinearProgress';
 import { Tooltip } from '../atoms/Tooltip';
 import { Typography } from '../atoms/Typography';
 

@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/react'
 import React from 'react';
 
-import { ParamsMap, VideoProps, Video } from '../../units/atoms/Video';
+import { ParamsMap, VideoProps, Video } from '../../units/molecules/MediaPlayer';
 
 export default {
   title: 'VASES-UI/Atoms/Video',

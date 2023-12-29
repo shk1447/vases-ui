@@ -5,7 +5,7 @@ import React from 'react';
 import {
   FlexLayout,
   FlexLayoutProps,
-} from '../../../units/atoms/layouts/FlexLayout';
+} from '../../../units/atoms/Layout/FlexLayout';
 
 
 export default {

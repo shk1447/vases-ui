@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import { ListItem } from '@mui/material';
 import { Box } from '../atoms/Box';
 import { Chip } from '../atoms/Chip';
-import { FileuploadButton } from '../atoms/FileuploadButton';
-import { FlexLayout } from '../atoms/layouts/FlexLayout';
+import { FileuploadButton } from './FileUploadButton';
+import { FlexLayout } from '../atoms/Layout/FlexLayout';
 
 export interface FileSelectorProps {
   selectType: 'single' | 'multi';

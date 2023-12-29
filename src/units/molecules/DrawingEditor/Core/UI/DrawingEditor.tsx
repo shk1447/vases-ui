@@ -11,7 +11,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { FlexLayout } from '../../../../atoms/layouts/FlexLayout';
+import { FlexLayout } from '../../../../atoms/Layout/FlexLayout';
 import ConfigManager from '../../Config';
 import ControllerSwitch from '../ConmmandRegistry/Actions/ControllerSwitch';
 import Redoable from '../ConmmandRegistry/Actions/Redoable';

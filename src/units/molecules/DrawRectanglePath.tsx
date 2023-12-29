@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@mui/material';
 import { DrawPoints, DrawPointsProps } from './DrawPoints';
-import { Group } from '../atoms/visualization/Group';
-import { Rectangle, RectangleProps } from '../atoms/visualization/Rectangle';
+import { Group } from '../atoms/Vector/Group';
+import { Rectangle, RectangleProps } from '../atoms/Vector/Rectangle';
 
 export interface DrawRectanglePathProps
   extends RectangleProps,

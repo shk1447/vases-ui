@@ -13,7 +13,7 @@ import React, {
 } from 'react';
 import { forwardRef } from 'react';
 import { IconButton } from '../../../../../atoms/IconButton';
-import { FlexLayout } from '../../../../../atoms/layouts/FlexLayout';
+import { FlexLayout } from '../../../../../atoms/Layout/FlexLayout';
 import {
   ICON_Add,
   ICON_AddNoneBorder,

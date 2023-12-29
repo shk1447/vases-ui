@@ -2,7 +2,7 @@
 import { jsx, css } from '@emotion/react'
 import React, { PropsWithChildren } from 'react';
 
-import { Alert, AlertProps } from '../../units/atoms/Alert';
+import { Alert, AlertProps } from '../../units/atoms/Alert/Alert';
 
 export default {
   title: 'VASES-UI/Atoms/Alert',

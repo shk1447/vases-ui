@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Snackbar, SnackbarProps } from '../../units/atoms/Snackbar';
+import { Snackbar, SnackbarProps } from '../../units/molecules/Snackbar';
 
 export default {
   title: 'VASES-UI/Atoms/Snackbar',

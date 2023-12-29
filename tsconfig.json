@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./lib",
     "declaration": true,
     "declarationDir": "./lib", // lib폴더에 ts 타입 속성을 빌드한다.
     "target": "es5",
@@ -25,5 +26,5 @@
     "index.ts",
     "svg.d.ts"
   ],
-  "exclude": ["node_modules", "build", "dist", "lib", "rollup.config.js"]
+  "exclude": ["node_modules", "build", "dist", "lib", "rollup.config.js", "src/stories"]
 }

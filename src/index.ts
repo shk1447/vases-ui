@@ -1,4 +1,2 @@
-import { Button } from "./units/atoms/Button";
-import { IconButton } from "./units/atoms/IconButton";
-
-export default { Button, IconButton };
+export * as Units from './units'
+export * as Theme from './themes'  

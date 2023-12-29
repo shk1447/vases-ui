@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Polygon,
   PolygonProps,
-} from '../../../units/atoms/visualization/Polygon';
+} from '../../../units/atoms/Vector/Polygon';
 
 export default {
   title: 'VASES-UI/Visualization/Polygon',

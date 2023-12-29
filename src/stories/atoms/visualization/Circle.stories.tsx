@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle, CircleProps } from '../../../units/atoms/visualization/Circle';
+import { Circle, CircleProps } from '../../../units/atoms/Vector/Circle';
 
 export default {
   title: 'VASES-UI/Visualization/Circle',

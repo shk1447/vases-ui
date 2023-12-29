@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Circle } from '../../../units/atoms/visualization/Circle';
+import { Circle } from '../../../units/atoms/Vector/Circle';
 import {
   Polygon,
   PolygonProps,
-} from '../../../units/atoms/visualization/Polygon';
-import { Rectangle } from '../../../units/atoms/visualization/Rectangle';
-import { Svg, SvgProps } from '../../../units/atoms/visualization/Svg';
+} from '../../../units/atoms/Vector/Polygon';
+import { Rectangle } from '../../../units/atoms/Vector/Rectangle';
+import { Svg, SvgProps } from '../../../units/atoms/Vector/Svg';
 
 export default {
   title: 'VASES-UI/Visualization/Svg',

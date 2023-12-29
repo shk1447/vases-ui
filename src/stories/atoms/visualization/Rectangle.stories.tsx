@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Rectangle,
   RectangleProps,
-} from '../../../units/atoms/visualization/Rectangle';
+} from '../../../units/atoms/Vector/Rectangle';
 
 export default {
   title: 'VASES-UI/Visualization/Rectangle',

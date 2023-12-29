@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { jsx, css } from '@emotion/react'
 import styled from '@emotion/styled';
 import { useTheme } from '@mui/material';
-import { FlexLayout, Spacer } from '../atoms/layouts/FlexLayout';
+import { FlexLayout, Spacer } from '../atoms/Layout/FlexLayout';
 import { Tab, Tabs } from '../atoms/Tabs';
 import { useMyTheme } from '../../themes';
 
