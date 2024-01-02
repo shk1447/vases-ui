@@ -23,9 +23,9 @@ export type _CustomOptions = {
 
 export type CustomOptions = _CustomOptions & CommonOptions;
 
-type CustomTheme = {
-  custom_mode?: string;
-  custom?: CustomOptions;
+export type CustomTheme = {
+  custom_mode: string;
+  custom: CustomOptions;
 };
 
 declare module '@mui/material/styles' {
@@ -34,13 +34,13 @@ declare module '@mui/material/styles' {
   export interface ThemeOptions extends CustomTheme {}
 }
 
-type ThemeType = {
+export type ThemeType = {
   // [index: string]: any;
   light: CustomOptions;
   dark: CustomOptions;
 };
 
-const themes: ThemeType = {
+export const themes: ThemeType = {
   light: ThemeLight,
   dark: ThemeDark,
 };
@@ -54,9 +54,6 @@ export const createMyTheme = (
   const baseTheme = createTheme({
     palette: {
       mode: mode,
-      primary: {
-        main: '#d6d6d6',
-      },
     },
     typography: {
       button: {

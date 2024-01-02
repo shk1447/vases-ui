@@ -6,8 +6,8 @@ export interface AppBarProps extends _AppBarProps {}
 
 const StyledAppBar = styled(({ ...props }: AppBarProps) => (
   <_AppBar {...props} />
-))(({ theme }) => {
-  theme.custom;
+))(({ theme: _ }) => {
+  
   return {
     '&': {
       height: '100%',

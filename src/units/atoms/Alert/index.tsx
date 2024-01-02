@@ -13,7 +13,6 @@ export const CustomAlert = styled(({ ...props }: AlertProps) => (
     '&': {
       display: 'flex',
       alignItems: 'center',
-      border: `1px solid ${_.custom?.border}`,
     },
     '& .MuiAlert-message': {
       padding: 0,

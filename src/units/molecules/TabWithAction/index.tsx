@@ -50,10 +50,6 @@ export const TabWithActions = ({
       <FlexLayout
         direction="row"
         gap={0}
-        css={css`
-          background: ${theme.custom?.pallete?.background};
-          border-bottom: 1px solid ${theme.custom?.pallete?.border};
-        `}
       >
         <Tabs
           height={height}
