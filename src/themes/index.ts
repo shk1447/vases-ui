@@ -24,8 +24,8 @@ export type _CustomOptions = {
 export type CustomOptions = _CustomOptions & CommonOptions;
 
 export type CustomTheme = {
-  custom_mode: string;
-  custom: CustomOptions;
+  custom_mode?: string;
+  custom?: CustomOptions;
 };
 
 declare module '@mui/material/styles' {
