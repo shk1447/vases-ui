@@ -26,5 +26,12 @@
     "index.ts",
     "svg.d.ts"
   ],
-  "exclude": ["node_modules", "build", "dist", "lib", "rollup.config.js", "**/*.stories.tsx"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "lib",
+    "rollup.config.js",
+    "**/*.stories.tsx"
+  ]
 }

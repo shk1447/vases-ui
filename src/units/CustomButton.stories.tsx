@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-
+import '../index.css';
 import { CustomButton, CustomButtonProps } from './CustomButton';
 
 export default {

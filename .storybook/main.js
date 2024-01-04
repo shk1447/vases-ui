@@ -1,7 +1,6 @@
+const path = require('path');
+
 module.exports = {
-  core: {
-    builder: 'webpack5',
-  },
   stories: [
     '../src/docs/introduction.stories.mdx',
     '../src/docs/getstarted.stories.mdx',
@@ -12,7 +11,14 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    // 'storybook-anima',
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
   ],
   features: {
     postcss: false,
@@ -20,6 +26,23 @@ module.exports = {
   framework: '@storybook/react',
   core: {
     builder: 'webpack5',
+  },
+  webpackFinal: config => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions: {
+              plugins: [require('tailwindcss'), require('autoprefixer')],
+            },
+          },
+        },
+      ],
+      include: path.resolve(__dirname, '../'),
+    });
+    return config;
   },
   previewHead: head => `
     ${head}
