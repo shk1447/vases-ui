@@ -1,12 +1,11 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import React, { ButtonHTMLAttributes, FC } from 'react';
-
 import { cn } from './utils/tailwind';
 
 const ButtonVariants = cva(``, {
   variants: {
     variant: {
-      more: 'bg-transparent hover:underline text-black-800',
+      more: 'bg-primary-test hover:underline text-black-800 border-yellow-50',
       register: 'bg-black hover:bg-gray-800 text-white',
       cancel:
         'bg-transparent border border-gray-300 hover:bg-gray-300 hover:text-white text-gray-500',
@@ -31,7 +30,7 @@ const ButtonVariants = cva(``, {
   compoundVariants:[{
     variant:'more',
     shape:'primary',
-    class: "test"
+    class: "hover:py-8"
   }],
   defaultVariants: {
     variant: 'more',
@@ -44,7 +43,7 @@ const ButtonVariants = cva(``, {
 export interface CustomButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof ButtonVariants> {
-  children?: React.ReactNode;
+  children?: React.ReactNode | Element
 }
 
 export const CustomButton: FC<CustomButtonProps> = ({
@@ -55,10 +54,9 @@ export const CustomButton: FC<CustomButtonProps> = ({
   children,
   ...props
 }) => {
-  console.log('ttt')
   return (
     <button className={cn(ButtonVariants({ variant, shape, size, weight }))} {...props}>
-      {children}
+      <>{children}</>
     </button>
   );
 };

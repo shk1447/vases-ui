@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-import '../index.css';
 import { CustomButton, CustomButtonProps } from './CustomButton';
 
 export default {
@@ -7,8 +6,8 @@ export default {
   component: CustomButton,
 };
 
-export const Default = (props: CustomButtonProps) => (
-  <CustomButton {...props}>test</CustomButton>
-);
+export const Default = (props: CustomButtonProps) => {
+  return <CustomButton {...props}>한국말</CustomButton>
+}
 
 Default.storyName = 'Default';

@@ -7,6 +7,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import dts from "rollup-plugin-dts";
+import copy from "rollup-plugin-copy";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx", ".scss"];
 
@@ -40,6 +41,12 @@ function setUpRollup({ input, output }) {
           }),
         ],
       }),
+      copy({
+        targets: [
+            // Need to copy the files over for usage
+            { src: "src/assets", dest: "lib" },
+        ],
+    }),
     ],
     external: ["react", "react-dom"],
   };
