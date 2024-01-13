@@ -19,6 +19,7 @@ module.exports = {
         },
       },
     },
+    'storybook-addon-themes',
   ],
   features: {
     postcss: false,
