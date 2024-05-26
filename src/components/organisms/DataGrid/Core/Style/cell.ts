@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import { css } from '@emotion/css';
 
 export const cell = css`
   contain: style;
@@ -16,11 +16,11 @@ export const cell = css`
   text-overflow: ellipsis;
   outline: none;
 
-  &[aria-selected="true"] {
-    // outline: 2px solid var(--rdg-selection-color);
-    // outline-offset: -2px;
+  &[aria-selected='true'] {
+    outline: 2px solid var(--rdg-selection-color);
+    outline-offset: -2px;
   }
-  &[role="columnheader"] {
+  &[role='columnheader'] {
     border-inline-end: 1px solid var(--rdg-border-color);
     border-block-end: 1px solid var(--rdg-border-color);
   }
@@ -43,11 +43,11 @@ export const groupcell = css`
   text-overflow: ellipsis;
   outline: none;
 
-  &[aria-selected="true"] {
+  &[aria-selected='true'] {
     // outline: 2px solid var(--rdg-selection-color);
     // outline-offset: -2px;
   }
-  &[role="columnheader"] {
+  &[role='columnheader'] {
     border-block-end: 1px solid var(--rdg-border-color);
   }
 `;
@@ -58,7 +58,7 @@ export const groupCellClassname = `rdg-cell ${groupcell}`;
 export const cellFrozen = css`
   position: sticky;
   /* Should have a higher value than 0 to show up above unfrozen cells */
-  &[role="columnheader"] {
+  &[role='columnheader'] {
     z-index: 111 !important;
   }
   z-index: 1;
