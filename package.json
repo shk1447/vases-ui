@@ -1,7 +1,6 @@
 {
-  "name": "@vases/ui",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vases-ui",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",

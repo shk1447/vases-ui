@@ -1,3 +1,6 @@
 docs
 src
 .storybook
+public
+mui
+konva
