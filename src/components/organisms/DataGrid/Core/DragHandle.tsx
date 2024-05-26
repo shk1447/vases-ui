@@ -1,7 +1,7 @@
-import { css } from "@emotion/css";
+import { css } from '@emotion/css';
 
-import type { CalculatedColumn, FillEvent, Position } from "./Types";
-import type { DataGridProps, SelectCellState } from "./DataGrid";
+import type { CalculatedColumn, FillEvent, Position } from './Types';
+import type { DataGridProps, SelectCellState } from './DataGrid';
 
 const cellDragHandle = css`
   cursor: move;
@@ -23,7 +23,7 @@ const cellDragHandle = css`
 const cellDragHandleClassname = `rdg-cell-drag-handle ${cellDragHandle}`;
 
 interface Props<R, SR>
-  extends Pick<DataGridProps<R, SR>, "rows" | "onRowsChange"> {
+  extends Pick<DataGridProps<R, SR>, 'rows' | 'onRowsChange'> {
   columns: readonly CalculatedColumn<R, SR>[];
   selectedPosition: SelectCellState;
   latestDraggedOverRowIdx: React.MutableRefObject<number | undefined>;
@@ -47,8 +47,8 @@ export default function DragHandle<R, SR>({
   function handleMouseDown(event: React.MouseEvent<HTMLDivElement>) {
     if (event.buttons !== 1) return;
     setDragging(true);
-    window.addEventListener("mouseover", onMouseOver);
-    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener('mouseover', onMouseOver);
+    window.addEventListener('mouseup', onMouseUp);
 
     function onMouseOver(event: MouseEvent) {
       // Trigger onMouseup in edge cases where we release the mouse button but `mouseup` isn't triggered,
@@ -58,8 +58,8 @@ export default function DragHandle<R, SR>({
     }
 
     function onMouseUp() {
-      window.removeEventListener("mouseover", onMouseOver);
-      window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener('mouseover', onMouseOver);
+      window.removeEventListener('mouseup', onMouseUp);
       setDragging(false);
       handleDragEnd();
     }
