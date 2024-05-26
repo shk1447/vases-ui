@@ -1,37 +1,32 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
-    "declaration": true,
-    "declarationDir": "./lib", // lib폴더에 ts 타입 속성을 빌드한다.
+    "paths": {
+      "@vases-ui/*": ["./src/*"]
+    },
     "target": "es5",
-    "allowJs": true,
     "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "downlevelIteration": true,
-    "module": "es6",
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "jsx": "react",
-    "typeRoots": ["@types"],
-    "types": ["react", "@emotion/react/types/css-prop"]
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": [
+      "react",
+      "@emotion/react/types/css-prop",
+      "jest",
+      "@testing-library/jest-dom"
+    ]
   },
-  "include": [
-    "**/*.tsx",
-    "**/*.mdx",
-    "**/*.ts",
-    "@types",
-    "index.ts",
-    "svg.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "lib",
-    "rollup.config.js",
-    "**/*.stories.tsx"
-  ]
+  "typeRoots": ["@types"],
+
+  "include": ["src"]
 }
