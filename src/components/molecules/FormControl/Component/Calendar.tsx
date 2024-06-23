@@ -1,25 +1,25 @@
-import InputAdornment from "@mui/material/InputAdornment";
-import { TextFieldProps } from "@mui/material/TextField";
-import { createContext, forwardRef } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import FormControl from "../FormControl";
-import { ReactComponent as CalendarIcon } from "../Assets/Calendar.svg";
-import { alpha, styled } from "@mui/material/styles";
-import { black, grey, primary, white } from "../../../../theme/colors";
-import { addDays, addMonths } from "date-fns";
+import InputAdornment from '@mui/material/InputAdornment';
+import { TextFieldProps } from '@mui/material/TextField';
+import { createContext, forwardRef } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import FormControl from '../FormControl';
+import { ReactComponent as CalendarIcon } from '../Assets/Calendar.svg';
+import { alpha, styled } from '@mui/material/styles';
+import { black, grey, primary, white } from '../../../../theme/colors';
+import { addDays, addMonths } from 'date-fns';
 import {
   CalendarContainer,
   ReactDatePickerCustomHeaderProps,
   ReactDatePickerProps,
-} from "react-datepicker";
-import { ReactComponent as BeforeIcon } from "../Assets/Before.svg";
-import { ReactComponent as AfterIcon } from "../Assets/After.svg";
-import Typography from "@mui/material/Typography";
+} from 'react-datepicker';
+import { ReactComponent as BeforeIcon } from '../Assets/Before.svg';
+import { ReactComponent as AfterIcon } from '../Assets/After.svg';
+import Typography from '@mui/material/Typography';
 
 const CustomInput = forwardRef(({ value, onClick }: TextFieldProps, ref) => {
   return (
-    <FormControl onClick={onClick} style={{ width: "100%" }}>
+    <FormControl onClick={onClick} style={{ width: '100%' }}>
       <FormControl.TextField
         inputRef={ref}
         value={value}
@@ -35,98 +35,98 @@ const CustomInput = forwardRef(({ value, onClick }: TextFieldProps, ref) => {
   );
 });
 
-const ReactDatePickerContainer = styled("div")(({ theme }) => ({
-  "& .react-datepicker__header--custom": {
+const ReactDatePickerContainer = styled('div')(({ theme }) => ({
+  '& .react-datepicker__header--custom': {
     backgroundColor: white,
     borderRadius: 0,
-    boxSizing: "border-box",
+    boxSizing: 'border-box',
   },
 
-  "& .react-datepicker__month-container": {
+  '& .react-datepicker__month-container': {
     // padding: "16px",
-    width: "100%",
+    width: '100%',
   },
-  "& .react-datepicker__month": {
+  '& .react-datepicker__month': {
     margin: 0,
-    padding: "0px 16px 16px",
+    padding: '0px 16px 16px',
   },
-  "& .react-datepicker__header": {
-    borderBottom: "none",
-    padding: "16px",
+  '& .react-datepicker__header': {
+    borderBottom: 'none',
+    padding: '16px',
   },
-  "& .react-datepicker_day": {
-    backgroundColor: "none",
+  '& .react-datepicker_day': {
+    backgroundColor: 'none',
   },
-  "& .react-datepicker__day:not(:empty):hover": {
-    backgroundColor: "rgba(125, 127, 134, 0.1)",
-    borderRadius: "50%",
-  },
-
-  "& .react-datepicker__day--selected:focus-visible": {
-    outline: "none",
+  '& .react-datepicker__day:not(:empty):hover': {
+    backgroundColor: 'rgba(125, 127, 134, 0.1)',
+    borderRadius: '50%',
   },
 
-  "& .react-datepicker__day-names:before": {},
-  "& .react-datepicker__day-names": {
+  '& .react-datepicker__day--selected:focus-visible': {
+    outline: 'none',
+  },
+
+  '& .react-datepicker__day-names:before': {},
+  '& .react-datepicker__day-names': {
     // width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "12px 10px 0px 10px",
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '12px 10px 0px 10px',
   },
-  "& .react-datepicker__day-name": {
-    fontFamily: "Noto Sans KR",
-    fontStyle: "normal",
+  '& .react-datepicker__day-name': {
+    fontFamily: 'Noto Sans KR',
+    fontStyle: 'normal',
     fontWeight: 400,
-    fontSize: "10px",
-    lineHeight: "16px",
+    fontSize: '10px',
+    lineHeight: '16px',
     color: grey[80],
   },
-  "& .react-datepicker__day--disabled": {
-    "& .MuiTypography-root": {
-      fontFamily: "Noto Sans KR",
-      fontStyle: "normal",
+  '& .react-datepicker__day--disabled': {
+    '& .MuiTypography-root': {
+      fontFamily: 'Noto Sans KR',
+      fontStyle: 'normal',
       fontWeight: 500,
-      fontSize: "12px",
-      lineHeight: "16px",
+      fontSize: '12px',
+      lineHeight: '16px',
       color: grey[10],
     },
   },
-  "& .react-datepicker__week": {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "12px 10px 0px 10px",
+  '& .react-datepicker__week': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '12px 10px 0px 10px',
   },
-  "& .react-datepicker__day--keyboard-selected": {
+  '& .react-datepicker__day--keyboard-selected': {
     backgroundColor: white,
-    border: "none",
+    border: 'none',
   },
-  "& .react-datepicker__day--selected:not(.react-datepicker__day--outside-month)":
+  '& .react-datepicker__day--selected:not(.react-datepicker__day--outside-month)':
     {
       backgroundColor: primary[100],
-      borderRadius: "50%",
-      "& .MuiTypography-root": {
+      borderRadius: '50%',
+      '& .MuiTypography-root': {
         color: `${white}!important`,
       },
     },
-  "& .react-datepicker__day--selected:is(.react-datepicker__day--outside-month)":
+  '& .react-datepicker__day--selected:is(.react-datepicker__day--outside-month)':
     {
       backgroundColor: white,
-      pointerEvents: "none",
+      pointerEvents: 'none',
     },
-  "& .react-datepicker__day--outside-month:is(:empty)": {
-    background: "transparent",
+  '& .react-datepicker__day--outside-month:is(:empty)': {
+    background: 'transparent',
   },
-  "& .react-datepicker__day--in-range": {
+  '& .react-datepicker__day--in-range': {
     borderRadius: 4,
     backgroundColor: primary[100],
-    "& .MuiTypography-root": {
+    '& .MuiTypography-root': {
       color: `${white}!important`,
     },
   },
-  "& .react-datepicker__day--in-selecting-range": {
+  '& .react-datepicker__day--in-selecting-range': {
     borderRadius: 4,
     backgroundColor: alpha(primary[100], 0.4),
-    "& .MuiTypography-root": {
+    '& .MuiTypography-root': {
       color: `${white}!important`,
     },
   },
@@ -173,20 +173,20 @@ const ReactDatePickerWrapper =
     return (
       <ReactDatePickerContainer>
         <CalendarContainer className={className}>
-          <div style={{ position: "relative", width: width }}>{children}</div>
+          <div style={{ position: 'relative', width: width }}>{children}</div>
         </CalendarContainer>
       </ReactDatePickerContainer>
     );
   };
 
-const IconWrapper = styled("div")(({ theme }) => ({
-  "&:not(.Mui-disabled):hover": {
-    backgroundColor: "rgba(125, 127, 134, 0.1)",
+const IconWrapper = styled('div')(({ theme }) => ({
+  '&:not(.Mui-disabled):hover': {
+    backgroundColor: 'rgba(125, 127, 134, 0.1)',
     borderRadius: 4,
-    cursor: "pointer",
+    cursor: 'pointer',
   },
-  "&.Mui-disabled:hover": {
-    cursor: "not-allowed",
+  '&.Mui-disabled:hover': {
+    cursor: 'not-allowed',
   },
 }));
 
@@ -201,24 +201,24 @@ const SingleCalenderHeader = ({
   <div
     style={{
       borderBottom: `1px solid ${grey[20]}`,
-      display: "flex",
-      justifyContent: "space-between",
-      padding: "0px 16px 14px 16px",
+      display: 'flex',
+      justifyContent: 'space-between',
+      padding: '0px 16px 14px 16px',
     }}
   >
-    <IconWrapper className={prevMonthButtonDisabled ? "Mui-disabled" : ""}>
+    <IconWrapper className={prevMonthButtonDisabled ? 'Mui-disabled' : ''}>
       <BeforeIcon
         onClick={prevMonthButtonDisabled ? () => {} : decreaseMonth}
       />
     </IconWrapper>
 
-    <Typography variant="med14" alignItems={"center"}>
-      {monthDate.toLocaleString("en-US", {
-        month: "long",
-        year: "numeric",
+    <Typography variant="med14" alignItems={'center'}>
+      {monthDate.toLocaleString('en-US', {
+        month: 'long',
+        year: 'numeric',
       })}
     </Typography>
-    <IconWrapper className={nextMonthButtonDisabled ? "Mui-disabled" : ""}>
+    <IconWrapper className={nextMonthButtonDisabled ? 'Mui-disabled' : ''}>
       <AfterIcon onClick={nextMonthButtonDisabled ? () => {} : increaseMonth} />
     </IconWrapper>
   </div>
@@ -235,15 +235,15 @@ const MultiCalenderHeader = ({
   <div
     style={{
       borderBottom: `1px solid ${grey[20]}`,
-      display: "flex",
-      justifyContent: "space-between",
-      padding: "0px 16px 14px 16px",
+      display: 'flex',
+      justifyContent: 'space-between',
+      padding: '0px 16px 14px 16px',
     }}
   >
     <IconWrapper
-      className={prevMonthButtonDisabled ? "Mui-disabled" : ""}
+      className={prevMonthButtonDisabled ? 'Mui-disabled' : ''}
       style={{
-        visibility: !(customHeaderCount === 1) ? "visible" : "hidden",
+        visibility: !(customHeaderCount === 1) ? 'visible' : 'hidden',
       }}
     >
       <BeforeIcon
@@ -251,16 +251,16 @@ const MultiCalenderHeader = ({
       />
     </IconWrapper>
 
-    <Typography variant="med14" alignItems={"center"}>
-      {monthDate.toLocaleString("en-US", {
-        month: "long",
-        year: "numeric",
+    <Typography variant="med14" alignItems={'center'}>
+      {monthDate.toLocaleString('en-US', {
+        month: 'long',
+        year: 'numeric',
       })}
     </Typography>
 
     <IconWrapper
-      className={nextMonthButtonDisabled ? "Mui-disabled" : ""}
-      style={{ visibility: !(customHeaderCount === 0) ? "visible" : "hidden" }}
+      className={nextMonthButtonDisabled ? 'Mui-disabled' : ''}
+      style={{ visibility: !(customHeaderCount === 0) ? 'visible' : 'hidden' }}
     >
       <AfterIcon onClick={nextMonthButtonDisabled ? () => {} : increaseMonth} />
     </IconWrapper>
@@ -281,7 +281,7 @@ const Calendar = (props: CalendarProps) => {
       customInput={<CustomInput />}
       showPopperArrow={false}
       renderDayContents={renderDayContents}
-      formatWeekDay={(nameOfDay) => nameOfDay.substr(0, 3)}
+      formatWeekDay={nameOfDay => nameOfDay.substr(0, 3)}
       renderCustomHeader={
         props.monthsShown === 1
           ? SingleCalenderHeader

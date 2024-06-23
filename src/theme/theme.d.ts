@@ -1,5 +1,5 @@
-import * as MUIStyles from "@mui/material/styles";
-declare module "@mui/material/Checkbox" {
+import * as MUIStyles from '@mui/material/styles';
+declare module '@mui/material/Checkbox' {
   interface CheckboxPropsColorOverrides {
     vases_success: true;
     vases_primary: true;
@@ -9,7 +9,7 @@ declare module "@mui/material/Checkbox" {
   }
 }
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   MUIStyles();
 
   interface Theme {
@@ -26,19 +26,19 @@ declare module "@mui/material/styles" {
   }
 
   interface Palette {
-    vases_success: Palette["primary"];
-    vases_primary: Palette["primary"];
-    vases_warning: Palette["primary"];
-    vases_alert: Palette["primary"];
-    vases_neutral: Palette["primary"];
+    vases_success: Palette['primary'];
+    vases_primary: Palette['primary'];
+    vases_warning: Palette['primary'];
+    vases_alert: Palette['primary'];
+    vases_neutral: Palette['primary'];
   }
 
   interface PaletteOptions {
-    vases_success: Palette["primary"];
-    vases_primary: Palette["primary"];
-    vases_warning: Palette["primary"];
-    vases_alert: Palette["primary"];
-    vases_neutral: Palette["primary"];
+    vases_success: Palette['primary'];
+    vases_primary: Palette['primary'];
+    vases_warning: Palette['primary'];
+    vases_alert: Palette['primary'];
+    vases_neutral: Palette['primary'];
   }
 
   interface TypographyVariants {
@@ -75,7 +75,7 @@ declare module "@mui/material/styles" {
   }
 }
 
-declare module "@doodle3d/clipper-lib" {
+declare module '@doodle3d/clipper-lib' {
   export const JS: any;
   export const Clipper: any;
   export const PolyFillType: any;

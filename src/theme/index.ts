@@ -3,12 +3,12 @@ import {
   Theme as _Theme,
   ThemeProvider,
   ThemeOptions as _ThemeOptions,
-} from "@mui/material/styles";
-import dark from "./dark";
-import light from "./light";
-import typography from "./typography";
+} from '@mui/material/styles';
+import dark from './dark';
+import light from './light';
+import typography from './typography';
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface Theme {
     // vases: any;
   }
@@ -23,19 +23,19 @@ declare module "@mui/material/styles" {
   }
 
   interface Palette {
-    vases_success: Palette["primary"];
-    vases_primary: Palette["primary"];
-    vases_warning: Palette["primary"];
-    vases_alert: Palette["primary"];
-    vases_neutral: Palette["primary"];
+    vases_success: Palette['primary'];
+    vases_primary: Palette['primary'];
+    vases_warning: Palette['primary'];
+    vases_alert: Palette['primary'];
+    vases_neutral: Palette['primary'];
   }
 
   interface PaletteOptions {
-    vases_success: Palette["primary"];
-    vases_primary: Palette["primary"];
-    vases_warning: Palette["primary"];
-    vases_alert: Palette["primary"];
-    vases_neutral: Palette["primary"];
+    vases_success: Palette['primary'];
+    vases_primary: Palette['primary'];
+    vases_warning: Palette['primary'];
+    vases_alert: Palette['primary'];
+    vases_neutral: Palette['primary'];
   }
 
   interface TypographyVariants {

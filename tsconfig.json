@@ -26,7 +26,6 @@
       "@testing-library/jest-dom"
     ]
   },
-  "typeRoots": ["@types"],
-
+  "typeRoots": ["./src"],
   "include": ["src"]
 }

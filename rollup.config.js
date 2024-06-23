@@ -9,7 +9,9 @@ import json from '@rollup/plugin-json';
 import dts from 'rollup-plugin-dts';
 import copy from 'rollup-plugin-copy';
 import alias from '@rollup/plugin-alias';
-import prettier from 'rollup-plugin-prettier';
+import svg from 'rollup-plugin-svg';
+import url from 'rollup-plugin-url';
+import svgr from '@svgr/rollup';
 import path from 'path';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx', '.scss'];
@@ -26,6 +28,8 @@ function setUpRollup({ input, output }) {
       exclude: 'node_modules/**',
     },
     plugins: [
+      svg(),
+      svgr(),
       peerDepsExternal(),
       json(),
       resolve({ extensions }),
@@ -33,6 +37,7 @@ function setUpRollup({ input, output }) {
         include: /node_modules/,
       }),
       typescript(),
+      url(),
       postcss({
         extract: true,
         modules: true,
@@ -60,7 +65,7 @@ export default [
     input: './src/index.ts',
     output: {
       file: 'lib/index.js',
-      sourcemap: true,
+      sourcemap: false,
       format: 'cjs',
     },
   }),
@@ -68,7 +73,7 @@ export default [
     input: './src/index.ts',
     output: {
       file: 'lib/index.esm.js',
-      sourcemap: true,
+      sourcemap: false,
       format: 'esm',
     },
   }),
@@ -85,5 +90,6 @@ export default [
       }),
       // 타입 정의 파일은 가독성을 위해 prettier 적용
     ],
+    external: [/\.css$/],
   },
 ];

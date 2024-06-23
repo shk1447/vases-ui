@@ -1,78 +1,79 @@
-import React from "react";
-import _Slider, { SliderProps as _SliderProps } from "@mui/material/Slider";
-import { styled } from "@mui/material";
-import { grey, primary } from "@vases-ui/theme/colors";
+import React from 'react';
+import _Slider, { SliderProps as _SliderProps } from '@mui/material/Slider';
+import { styled } from '@mui/material';
+import { grey, primary } from '@vases-ui/theme/colors';
 
 export interface SliderProps extends _SliderProps {}
 
-const Slider = styled(_Slider)(({ theme }) => ({
-  "& .MuiSlider-thumb": {
-    width: "12px",
-    height: "12px",
+const StyledSlider = styled(_Slider)(({ theme }) => ({
+  '& .MuiSlider-thumb': {
+    width: '12px',
+    height: '12px',
 
-    "&:focus,&:hover, &.Mui-active, &.Mui-focusVisible": {
-      boxShadow: "inherit",
+    '&:focus,&:hover, &.Mui-active, &.Mui-focusVisible': {
+      boxShadow: 'inherit',
     },
 
-    "&:before": {
-      display: "none",
+    '&:before': {
+      display: 'none',
     },
   },
-  "& .MuiSlider-track": {
+  '& .MuiSlider-track': {
     borderRadius: 2,
-    height: "4px",
+    height: '4px',
   },
-  "&.MuiSlider-root": {
-    color: primary[100],
-    "& .MuiSlider-rail": {
-      background: primary[100],
+  '&.MuiSlider-root': {
+    '& .MuiSlider-rail': {
       borderRadius: 2,
-      height: "4px",
+      height: '4px',
       opacity: 0.5,
     },
-    "& .MuiSlider-track": {
-      background: primary[100],
-      border: "0px",
+    '& .MuiSlider-track': {
+      border: '0px',
     },
   },
-  "&.MuiSlider-root.Mui-disabled": {
+  '&.MuiSlider-root.Mui-disabled': {
     color: grey[100],
-    "& .MuiSlider-track": {
+    '& .MuiSlider-track': {
       backgroundColor: grey[60],
-      border: "none",
+      border: 'none',
     },
-    "& .MuiSlider-thumb": {
+    '& .MuiSlider-thumb': {
       backgroundColor: `${grey[60]} !important`,
     },
   },
 
-  "& .MuiSlider-valueLabel": {
-    "&:before": {
-      display: "none",
+  '& .MuiSlider-valueLabel': {
+    '&:before': {
+      display: 'none',
     },
-    minWidth: "32px",
-    height: "32px",
-    color: "white",
-    lineHeight: "16px",
-    fontSize: "12px",
+    minWidth: '32px',
+    height: '32px',
+    color: 'white',
+    lineHeight: '16px',
+    fontSize: '12px',
     fontWeight: 500,
     background: primary[100],
-    padding: "8px",
-    borderRadius: "50%",
+    padding: '2px',
+    borderRadius: '50%',
   },
-  "& .MuiSlider-mark": {
-    backgroundColor: "#bfbfbf",
+  '& .MuiSlider-mark': {
+    backgroundColor: '#bfbfbf',
     height: 16,
     width: 2,
-    "& .MuiSlider-markActive": {
+    '& .MuiSlider-markActive': {
       opacity: 1,
-      backgroundColor: "#bfbfbf",
+      backgroundColor: '#bfbfbf',
     },
   },
-  "& .MuiSlider-markLabel": {
-    fontSize: "12px",
+  '& .MuiSlider-markLabel': {
+    fontSize: '12px',
     color: grey[80],
   },
 }));
+
+const Slider = (props: SliderProps) => {
+  return <StyledSlider {...props} />;
+};
 
 export default Slider;
