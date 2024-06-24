@@ -38,6 +38,7 @@ export const Default: ComponentStory<typeof FormControl> = args => {
   return (
     <div style={{ padding: '50px' }}>
       <FormControl {...args} style={{ width: '336px' }}>
+        <FormControl.Label>TEST</FormControl.Label>
         <FormControl.AutoComplete
           selectedItem={value}
           onAddItem={OptionsAdd}

@@ -214,7 +214,7 @@ const Dropdown = ({
   );
 };
 
-const StyledMenuItem = styled(MenuItem)(({ theme, selected }) => {
+export const StyledMenuItem = styled(MenuItem)(({ theme, selected }) => {
   return {
     width: '100%',
     height: '36px',

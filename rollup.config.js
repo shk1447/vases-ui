@@ -41,7 +41,7 @@ function setUpRollup({ input, output }) {
       postcss({
         extract: true,
         modules: true,
-        sourceMap: true,
+        sourceMap: false,
         use: ['sass'],
         plugins: [
           postcssPrefixer({

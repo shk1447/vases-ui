@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import FormControl from '../FormControl';
 import { ReactComponent as CalendarIcon } from '../Assets/Calendar.svg';
-import { alpha, styled } from '@mui/material/styles';
+import { alpha, css, styled } from '@mui/material/styles';
 import { black, grey, primary, white } from '../../../../theme/colors';
 import { addDays, addMonths } from 'date-fns';
 import {
@@ -19,7 +19,7 @@ import Typography from '@mui/material/Typography';
 
 const CustomInput = forwardRef(({ value, onClick }: TextFieldProps, ref) => {
   return (
-    <FormControl onClick={onClick} style={{ width: '100%' }}>
+    <FormControl onClick={onClick} style={{ width: '100%', marginTop: '24px' }}>
       <FormControl.TextField
         inputRef={ref}
         value={value}
@@ -303,7 +303,5 @@ const Calendar = (props: CalendarProps) => {
     />
   );
 };
-
-Calendar.name = 'Calendar';
 
 export default Calendar;

@@ -1,24 +1,24 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { useState } from "react";
-import FormControl from "../../FormControl";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { useState } from 'react';
+import FormControl from '../../FormControl';
 export default {
-  title: "Vases-UI/molecules/FormControl/RadioGroup",
+  title: 'Vases-UI/molecules/FormControl/RadioGroup',
   component: FormControl,
   parameters: {
     docs: {
       description: {
         component: `RadioGroup 입니다.`,
       },
-      source: { type: "code" },
+      source: { type: 'code' },
     },
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 } as ComponentMeta<typeof FormControl>;
 
-export const Default: ComponentStory<typeof FormControl> = (args) => {
-  const [value, setValue] = useState("Item");
+export const Default: ComponentStory<typeof FormControl> = args => {
+  const [value, setValue] = useState('Item');
   return (
-    <div style={{ padding: "50px" }}>
+    <div style={{ padding: '50px' }}>
       <FormControl {...args}>
         <FormControl.RadioGroup
           row
@@ -31,19 +31,20 @@ export const Default: ComponentStory<typeof FormControl> = (args) => {
           <FormControl.RadioGroup.Radio
             label="Item"
             value="Item"
-            componentsProps={{ typography: { variant: "med12" } }}
+            componentsProps={{ typography: { variant: 'med12' } }}
           />
           <FormControl.RadioGroup.Radio
             label="Item2"
             value="Item2"
-            componentsProps={{ typography: { variant: "med12" } }}
+            componentsProps={{ typography: { variant: 'med12' } }}
           />
           <FormControl.RadioGroup.Radio
             label="Item3"
             value="Item3"
-            componentsProps={{ typography: { variant: "med14" } }}
+            componentsProps={{ typography: { variant: 'med14' } }}
           />
         </FormControl.RadioGroup>
+        <FormControl.HelperText>Helper Text</FormControl.HelperText>
       </FormControl>
     </div>
   );

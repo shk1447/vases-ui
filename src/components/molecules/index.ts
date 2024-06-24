@@ -1,3 +1,5 @@
+export * from './Accordion';
+
 export { default as Breadcrumbs } from './Breadcrumbs';
 export * from './Breadcrumbs';
 
@@ -12,7 +14,6 @@ export * from './Dialog';
 export { default as FormControl } from './FormControl';
 export * from './FormControl';
 
-export * from './List';
 export * from './LoadingOverlay';
 export * from './Tabs';
 export * from './VirtualizedRenderer';

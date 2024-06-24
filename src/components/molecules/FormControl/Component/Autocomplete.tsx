@@ -222,7 +222,7 @@ const Autocomplete = (props: AutoCompleteProps) => {
   }, [popupOpen, anchorEl]);
 
   return (
-    <div style={style}>
+    <div style={{ ...style, marginTop: '24px' }}>
       <div {...getRootProps()}>
         <TextField
           onClick={handleClick}

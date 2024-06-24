@@ -6,9 +6,7 @@ export interface VirtualizedRenderer {
   itemCount: number;
   refItems?: any[];
   containerSize: number;
-
   overscanSize: number;
-
   onRenderItem: (index: number) => React.ReactNode;
 }
 
