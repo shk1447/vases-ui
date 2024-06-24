@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import {
   Box,
   css,
@@ -8,77 +8,77 @@ import {
   Divider,
   Popper,
   Popover,
-} from "@mui/material";
-import { useFormControl } from "@mui/material/FormControl";
+} from '@mui/material';
+import { useFormControl } from '@mui/material/FormControl';
 import useAutocomplete, {
   createFilterOptions,
-} from "@mui/material/useAutocomplete";
-import { Button, Typography } from "@vases-ui/components/atoms";
-import { grey, primary, state } from "@vases-ui/theme/colors";
-import React, { useState, useMemo, useEffect } from "react";
-import TextField from "./TextField";
-import { ReactComponent as Add } from "../Assets/Add.svg";
-import { ReactComponent as ArrowUpNobar } from "../Assets/ArrowUpNobar.svg";
-import { ReactComponent as ArrowDownNobar } from "../Assets/ArrowDownNobar.svg";
+} from '@mui/material/useAutocomplete';
+import { Button, Typography } from '@vases-ui/components/atoms';
+import { grey, primary, state } from '@vases-ui/theme/colors';
+import React, { useState, useMemo, useEffect } from 'react';
+import TextField from './TextField';
+import { ReactComponent as Add } from '../Assets/Add.svg';
+import { ReactComponent as ArrowUpNobar } from '../Assets/ArrowUpNobar.svg';
+import { ReactComponent as ArrowDownNobar } from '../Assets/ArrowDownNobar.svg';
 
-const StyledPopper = styled("div")`
+const StyledPopper = styled('div')`
   position: relative;
   z-index: 10000;
   width: 100%;
 `;
 
-const Listbox = styled("ul")(({ theme }) => ({
-  width: "100%",
+const Listbox = styled('ul')(({ theme }) => ({
+  width: '100%',
   margin: 0,
-  marginTop: "2px",
-  boxSizing: "border-box",
+  marginTop: '2px',
+  boxSizing: 'border-box',
   borderRadius: 4,
-  listStyle: "none",
-  backgroundColor: (theme as any).palette.mode === "light" ? "#fff" : "#000",
-  overflow: "auto",
+  listStyle: 'none',
+  backgroundColor: (theme as any).palette.mode === 'light' ? '#fff' : '#000',
+  overflow: 'auto',
   maxHeight: 144,
-  display: "grid",
-  flexDirection: "column",
-  padding: "4px 0px",
-  gap: "4px",
+  display: 'grid',
+  flexDirection: 'column',
+  padding: '4px 0px',
+  gap: '4px',
   zIndex: 2,
 
-  "&::-webkit-scrollbar": {
-    display: "none",
+  '&::-webkit-scrollbar': {
+    display: 'none',
   },
 
-  border: "1px solid rgba(0,0,0,.25)",
-  "& li.Mui-focused": {
-    color: "white",
-    cursor: "pointer",
+  border: '1px solid rgba(0,0,0,.25)',
+  '& li.Mui-focused': {
+    color: 'white',
+    cursor: 'pointer',
   },
-  "& li:active": {
-    color: "white",
+  '& li:active': {
+    color: 'white',
   },
-  "& li": {
-    height: "36px",
-    display: "flex",
-    alignItems: "center",
-    boxSizing: "border-box",
-    padding: "8px 16px 8px 6px",
-    "& .MuiTypography-root": {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
+  '& li': {
+    height: '36px',
+    display: 'flex',
+    alignItems: 'center',
+    boxSizing: 'border-box',
+    padding: '8px 16px 8px 6px',
+    '& .MuiTypography-root': {
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
     },
-    "&:before": {
-      display: "block",
+    '&:before': {
+      display: 'block',
       width: 24,
       height: 24,
-      backgroundImage: "",
+      backgroundImage: '',
       content: '""',
-      paddingRight: "4px",
-      transform: "translate(0, 1px)",
+      paddingRight: '4px',
+      transform: 'translate(0, 1px)',
     },
   },
 
   "& li[aria-selected='true']": {
-    backgroundColor: "#EBF2FB",
-    "&:before": {
+    backgroundColor: '#EBF2FB',
+    '&:before': {
       backgroundImage: `${`url(
         "data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.40951 11.5901L5.99951 13.0001L9.99951 17.0001L17.9995 9.00008L16.5895 7.58008L9.99951 14.1701L7.40951 11.5901Z' fill='%235457D8'/%3E%3C/svg%3E%0A"
       )`}`,
@@ -87,10 +87,10 @@ const Listbox = styled("ul")(({ theme }) => ({
 }));
 
 const AddBox = styled(Box)(({ theme }) => ({
-  display: "flex",
-  gap: "4px",
-  padding: "8px, 12px, 8px, 40px",
-  alignItems: "center",
+  display: 'flex',
+  gap: '4px',
+  padding: '8px, 12px, 8px, 40px',
+  alignItems: 'center',
 }));
 
 export interface OptionProps {
@@ -115,8 +115,8 @@ export interface AutoCompleteProps {
 const filter = createFilterOptions<any>();
 
 const emptyOption: OptionProps = {
-  title: "",
-  value: "",
+  title: '',
+  value: '',
   disabled: true,
 };
 
@@ -152,17 +152,17 @@ const Autocomplete = (props: AutoCompleteProps) => {
     groupedOptions,
     popupOpen,
   } = useAutocomplete({
-    id: "use-autocomplete-demo",
-    value: autoOptions.filter((e) => e === value).length
+    id: 'use-autocomplete-demo',
+    value: autoOptions.filter(e => e === value).length
       ? value
       : {
-          title: "",
-          value: "",
+          title: '',
+          value: '',
           disabled: true,
         },
     options: autoOptions,
     getOptionLabel: (option: any) => {
-      if (typeof option === "string") {
+      if (typeof option === 'string') {
         return option;
       }
 
@@ -189,9 +189,9 @@ const Autocomplete = (props: AutoCompleteProps) => {
       const { inputValue } = params;
 
       // Suggest the creation of a new value
-      const isExisting = options.some((option) => inputValue === option.title);
+      const isExisting = options.some(option => inputValue === option.title);
 
-      if (inputValue !== "" && !isExisting && addOption) {
+      if (inputValue !== '' && !isExisting && addOption) {
         filtered = [
           {
             inputValue,
@@ -227,13 +227,13 @@ const Autocomplete = (props: AutoCompleteProps) => {
         <TextField
           onClick={handleClick}
           sx={{
-            width: "100%",
-            "& .MuiOutlinedInput-input": {
-              textOverflow: "ellipsis",
+            width: '100%',
+            '& .MuiOutlinedInput-input': {
+              textOverflow: 'ellipsis',
             },
-            "& .MuiInputBase-adornedEnd": !formControl?.disabled
+            '& .MuiInputBase-adornedEnd': !formControl?.disabled
               ? {
-                  cursor: "pointer",
+                  cursor: 'pointer',
                 }
               : {},
           }}
@@ -249,7 +249,7 @@ const Autocomplete = (props: AutoCompleteProps) => {
               ),
           }}
           value={getInputProps().value}
-          placeholder={"Type or Select"}
+          placeholder={'Type or Select'}
           onFocus={getInputProps().onFocus}
           onBlur={getInputProps().onBlur}
           onChange={getInputProps().onChange}
@@ -293,7 +293,7 @@ const Autocomplete = (props: AutoCompleteProps) => {
                     <>{option.renderOption ?? option.title}</>
                   )}
                 </MenuItem>
-              )
+              ),
             )}
           </Listbox>
         </Popper>

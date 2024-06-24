@@ -271,7 +271,7 @@ const renderDayContents = (day: number, date: Date) => {
   return <Typography variant="med12">{day}</Typography>;
 };
 
-interface CalendarProps extends ReactDatePickerProps {
+export interface CalendarProps extends ReactDatePickerProps {
   width: string;
 }
 const Calendar = (props: CalendarProps) => {
@@ -303,5 +303,7 @@ const Calendar = (props: CalendarProps) => {
     />
   );
 };
+
+Calendar.name = 'Calendar';
 
 export default Calendar;

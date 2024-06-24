@@ -1,24 +1,24 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import FormControl from "../../FormControl";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import FormControl from '../../FormControl';
 export default {
-  title: "Vases-UI/molecules/FormControl/ColorPciker",
+  title: 'Vases-UI/molecules/FormControl/ColorPicker',
   component: FormControl,
   parameters: {
     docs: {
       description: {
         component: `ColorPicker 입니다.`,
       },
-      source: { type: "code" },
+      source: { type: 'code' },
     },
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 } as ComponentMeta<typeof FormControl>;
 
-export const Default: ComponentStory<typeof FormControl> = (args) => {
+export const Default: ComponentStory<typeof FormControl> = args => {
   return (
-    <div style={{ padding: "50px" }}>
-      <FormControl style={{ width: "336px" }}>
-        <FormControl.ColorPicker hex={"#000000"} onChange={() => {}} />
+    <div style={{ padding: '50px' }}>
+      <FormControl style={{ width: '336px' }}>
+        <FormControl.ColorPicker hex={'#000000'} onChange={() => {}} />
       </FormControl>
     </div>
   );

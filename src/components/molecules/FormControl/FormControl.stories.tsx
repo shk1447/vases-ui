@@ -1,19 +1,19 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import FormControl from "./FormControl";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import FormControl from './FormControl';
 
-import { Stack } from "@mui/material";
+import { Stack } from '@mui/material';
 
 export default {
-  title: "Vases-UI/molecules/FormControl",
+  title: 'Vases-UI/molecules/FormControl',
   component: FormControl,
   parameters: {
     docs: {
       description: {
         component: `FormControl 입니다.`,
       },
-      source: { type: "code" },
+      source: { type: 'code' },
     },
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 } as ComponentMeta<typeof FormControl>;
 
@@ -26,25 +26,25 @@ interface FormTestProps {
   threeDisabled: boolean;
 }
 const FormTest: ComponentStory<any> = (args: FormTestProps) => (
-  <div style={{ padding: "50px" }}>
+  <div style={{ padding: '50px' }}>
     <form>
-      <Stack direction="column" gap="20px" width="50%">
+      <Stack direction="column" gap="20px" width="100%">
         <Stack direction="row" gap="10px" width="100%">
           <FormControl
             error={args.oneError}
             disabled={args.oneDisabled}
-            style={{ width: "50%" }}
+            style={{ width: '100%' }}
           >
             <FormControl.Label>1</FormControl.Label>
             <FormControl.TextField
               placeholder="Typing"
-              helperText={args.oneError ? "Error Message" : ""}
+              helperText={args.oneError ? 'Error Message' : ''}
             ></FormControl.TextField>
           </FormControl>
           <FormControl
             error={args.twoError}
             disabled={args.twoDisabled}
-            style={{ width: "50%" }}
+            style={{ width: '50%' }}
           >
             <FormControl.Label>2</FormControl.Label>
             <FormControl.TextField placeholder="Typing"></FormControl.TextField>
@@ -54,7 +54,7 @@ const FormTest: ComponentStory<any> = (args: FormTestProps) => (
         <FormControl
           error={args.threeError}
           disabled={args.twoDisabled}
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         >
           <FormControl.Label>3</FormControl.Label>
           <FormControl.TextField
@@ -62,7 +62,7 @@ const FormTest: ComponentStory<any> = (args: FormTestProps) => (
             multiline
             rows={3}
             maxRows={3}
-            helperText={"Message"}
+            helperText={'Message'}
           ></FormControl.TextField>
         </FormControl>
       </Stack>

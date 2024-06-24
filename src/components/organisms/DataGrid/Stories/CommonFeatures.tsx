@@ -1,7 +1,7 @@
-import DataGrid, { SortColumn } from "../";
-import { useMemo, useState } from "react";
-import { SelectColumn } from "../Extensions/Columns";
-import { css } from "@emotion/css";
+import DataGrid, { SortColumn } from '../';
+import { useMemo, useState } from 'react';
+import { Columns } from '../Extensions';
+import { css } from '@emotion/css';
 
 const allClassname = css`
   display: flex;
@@ -27,11 +27,11 @@ interface Row {
 type Comparator = (prev: Row, curr: Row) => number;
 const getComparator = (key: string): Comparator => {
   switch (key) {
-    case "dataName":
+    case 'dataName':
       return (prev, curr) => {
         return prev[key].localeCompare(curr[key]);
       };
-    case "addedDate":
+    case 'addedDate':
       return (prev, curr) => {
         return prev[key] - curr[key];
       };
@@ -45,10 +45,10 @@ const CommonFeatures = () => {
   const rows: Row[] = new Array(100).fill(1).map((v, i) => {
     return {
       dataName: `000${i}.png`,
-      projects: ["Car Meterials"],
-      line: "Line 1",
-      process: "P1",
-      owner: "John Doe",
+      projects: ['Car Meterials'],
+      line: 'Line 1',
+      process: 'P1',
+      owner: 'John Doe',
       addedDate: currTime + i * 1000,
     };
   });
@@ -64,7 +64,7 @@ const CommonFeatures = () => {
         const comparator = getComparator(sort.columnKey);
         const compResult = comparator(prev, curr);
         if (compResult !== 0) {
-          return sort.direction === "ASC" ? compResult : -compResult;
+          return sort.direction === 'ASC' ? compResult : -compResult;
         }
       }
       return 0;
@@ -74,7 +74,7 @@ const CommonFeatures = () => {
     <div className={allClassname}>
       <DataGrid
         headerRowHeight={48}
-        rowKeyGetter={(row) => row.dataName}
+        rowKeyGetter={row => row.dataName}
         selectedRows={selectedRows}
         onRowClick={(row, column) => {
           if (selectedRows.length > 0) {
@@ -92,25 +92,25 @@ const CommonFeatures = () => {
         sortColumns={sortColumns}
         onSortColumnsChange={setSortColumns}
         columns={[
-          SelectColumn,
+          Columns.SelectColumn,
           {
-            key: "dataName",
-            name: "Data Name",
+            key: 'dataName',
+            name: 'Data Name',
             sortable: true,
             resizable: true,
             frozen: true,
-            width: "1fr",
+            width: 220,
           },
-          { key: "projects", name: "Projects", width: "1fr" },
-          { key: "line", name: "Prod Line", width: "1fr" },
-          { key: "process", name: "Process", width: "1fr", resizable: true },
-          { key: "owner", name: "Owner", width: "1fr" },
+          { key: 'projects', name: 'Projects' },
+          { key: 'line', name: 'Prod Line' },
+          { key: 'process', name: 'Process', resizable: true },
+          { key: 'owner', name: 'Owner' },
           {
-            key: "addedDate",
-            name: "Date Added",
+            key: 'addedDate',
+            name: 'Date Added',
             sortable: true,
-            width: "1fr",
-            formatter: (props) => {
+
+            formatter: props => {
               return new Date(props.row[props.column.key]).toString();
             },
           },

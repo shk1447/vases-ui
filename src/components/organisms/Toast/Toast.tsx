@@ -1,31 +1,21 @@
 import {
+  OptionsObject,
   SnackbarKey,
   SnackbarProviderProps,
   SnackbarProvider as _SnackbarProvider,
   useSnackbar as _useSnackbar,
 } from 'notistack';
-import { SnackbarContent } from '@mui/material';
+import { Box, SnackbarContent } from '@mui/material';
 import Snackbar, { SnackbarProps } from '@mui/material/Snackbar';
 import { styled } from '@mui/material/styles';
 import { black, grey, white } from '../../../theme/colors';
 import { ReactComponent as Close } from './Assets/Close.svg';
 import React, { createContext, ReactNode, useContext } from 'react';
-import IconButton from '@vases-ui/components/atoms/IconButton';
 import _ from 'lodash';
 
 const Toast = ({ children, ...props }: SnackbarProps) => {
   return (
-    <Snackbar
-      {...props}
-      sx={{
-        '&.MuiSnackbar-anchorOriginBottomRight': {
-          bottom: '32px',
-          right: '32px',
-          width: '320px',
-          height: '60px',
-        },
-      }}
-    >
+    <Snackbar {...props} sx={{}}>
       {children}
     </Snackbar>
   );
@@ -129,6 +119,7 @@ const useSnackbar = () => {
   const enqueueSnackbar = (
     variant: 'error' | 'warning' | 'info' | 'success',
     message: React.ReactNode,
+    opt?: OptionsObject,
   ): SnackbarKey => {
     const handleClose = () => {
       _closeSnackbar(snackbarKey);
@@ -138,17 +129,18 @@ const useSnackbar = () => {
         severity={variant}
         message={message}
         action={
-          <IconButton
-            key="close"
-            aria-label="Close"
-            color="inherit"
+          <Box
+            sx={{
+              padding: '4px',
+              cursor: 'pointer',
+            }}
             onClick={handleClose}
           >
             <Close />
-          </IconButton>
+          </Box>
         }
       />,
-      { persist: false },
+      opt ? opt : { persist: false },
     );
 
     return snackbarKey;

@@ -1,14 +1,7 @@
-import { Stack } from "@mui/material";
-import MUIDialog, { DialogProps } from "@mui/material/Dialog";
-import React from "react";
-import { ReactNode } from "react";
-import { styled } from "@mui/material/styles";
-import { white } from "../../../theme/colors";
-
-const Container = styled("div")(({ theme }) => ({
-  // padding: "32px",
-  // backgroundColor: white,
-})) as any;
+import { Box, Stack } from '@mui/material';
+import MUIDialog, { DialogProps } from '@mui/material/Dialog';
+import React from 'react';
+import { ReactNode } from 'react';
 
 interface CustomDialogProps extends DialogProps {
   children: ReactNode;
@@ -18,32 +11,24 @@ const Dialog = (props: CustomDialogProps): JSX.Element => {
   const { children, open } = props;
 
   return (
-    <MUIDialog
-      {...props}
-      open={open}
-      sx={{
-        "& .MuiDialog-paper": {
-          padding: "32px",
-          backgroundColor: white,
-          width: "400px",
-        },
-      }}
-    >
-      <Stack sx={{ height: "100%", gap: "40px" }}>
-        <Stack gap="24px" sx={{ flex: 1 }}>
-          {React.Children.toArray(children).filter(
-            (d: any) =>
-              d.type.name === Dialog.Body.name ||
-              d.type.name === Dialog.Description.name ||
-              d.type.name === Dialog.Title.name
-          )}
+    <MUIDialog {...props} open={open}>
+      <Box sx={{ padding: '32px', height: '100%', overflow: 'hidden' }}>
+        <Stack sx={{ height: '100%', gap: '40px' }}>
+          <Stack gap="16px" sx={{ flex: 1 }}>
+            {React.Children.toArray(children).filter(
+              (d: any) =>
+                d.type.name === Dialog.Body.name ||
+                d.type.name === Dialog.Description.name ||
+                d.type.name === Dialog.Title.name,
+            )}
+          </Stack>
+          <div>
+            {React.Children.toArray(children).filter(
+              (d: any) => d.type.name === Dialog.Buttons.name,
+            )}
+          </div>
         </Stack>
-        <div>
-          {React.Children.toArray(children).filter(
-            (d: any) => d.type.name === Dialog.Buttons.name
-          )}
-        </div>
-      </Stack>
+      </Box>
     </MUIDialog>
   );
 };
@@ -53,19 +38,21 @@ interface AreaProps {
 }
 
 const Title = ({ children }: AreaProps) => <div>{children}</div>;
-Title.displayName = "Title";
+Title.displayName = 'Title';
 Dialog.Title = Title;
 
 const Description = ({ children }: AreaProps) => <div>{children}</div>;
-Description.displayName = "Description";
+Description.displayName = 'Description';
 Dialog.Description = Description;
 
-const Body = ({ children }: AreaProps) => <div>{children}</div>;
-Body.displayName = "Body";
+const Body = ({ children }: AreaProps) => (
+  <div style={{ overflow: 'auto' }}>{children}</div>
+);
+Body.displayName = 'Body';
 Dialog.Body = Body;
 
 const Buttons = ({ children }: AreaProps) => <>{children}</>;
-Buttons.displayName = "Buttons";
+Buttons.displayName = 'Buttons';
 Dialog.Buttons = Buttons;
 
 export default Dialog;

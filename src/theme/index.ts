@@ -77,3 +77,5 @@ const lightTheme = createTheme({ ...typography, ...light });
 const darkTheme = createTheme({ ...typography, ...dark });
 
 export { lightTheme, darkTheme, ThemeProvider };
+
+export * from './colors';

@@ -1,21 +1,22 @@
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { useRef } from "react";
-import Button from "../../atoms/Button";
-import PopperTrigger, { usePopTriggerContext } from "./PopperTrigger";
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { useRef } from 'react';
+import Button from '../../atoms/Button';
+import PopperTrigger, { usePopTriggerContext } from './PopperTrigger';
+import { Typography } from '@vases-ui/components/atoms';
 
 export default {
-  title: "Vases-UI/organisms/PopperTrigger",
+  title: 'Vases-UI/organisms/PopperTrigger',
   component: PopperTrigger,
   parameters: {
     docs: {
       description: {
         component: `Popper Trigger 입니다.`,
       },
-      source: { type: "code" },
+      source: { type: 'code' },
     },
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 } as any;
 
@@ -37,9 +38,9 @@ const CustomMenu = () => {
     </Menu>
   );
 };
-export const ButtonTrigger: ComponentStory<any> = (args) => {
+export const ButtonTrigger: ComponentStory<any> = args => {
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: '100%' }}>
       <PopperTrigger>
         <PopperTrigger.Trigger>
           <Button variant="primary">Button</Button>
@@ -53,7 +54,7 @@ export const ButtonTrigger: ComponentStory<any> = (args) => {
 ButtonTrigger.bind({});
 ButtonTrigger.args = {};
 
-export const DisabeldButtonTrigger: ComponentStory<any> = (args) => {
+export const DisabeldButtonTrigger: ComponentStory<any> = args => {
   return (
     <PopperTrigger>
       <PopperTrigger.Trigger>
@@ -71,38 +72,44 @@ DisabeldButtonTrigger.args = {};
 
 interface PlacementProps {
   placement:
-    | "auto-end"
-    | "auto-start"
-    | "auto"
-    | "bottom-end"
-    | "bottom-start"
-    | "bottom"
-    | "left-end"
-    | "left-start"
-    | "left"
-    | "right-end"
-    | "right-start"
-    | "right"
-    | "top-end"
-    | "top-start"
-    | "top";
+    | 'auto-end'
+    | 'auto-start'
+    | 'auto'
+    | 'bottom-end'
+    | 'bottom-start'
+    | 'bottom'
+    | 'left-end'
+    | 'left-start'
+    | 'left'
+    | 'right-end'
+    | 'right-start'
+    | 'right'
+    | 'top-end'
+    | 'top-start'
+    | 'top';
 }
 export const Placement: ComponentStory<any> = (args: PlacementProps) => {
   return (
     <div
       style={{
-        display: "flex",
-        width: "500px",
-        height: "500px",
-        justifyContent: "center",
-        alignItems: "center",
+        display: 'flex',
+        width: '500px',
+        height: '500px',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       <PopperTrigger>
         <PopperTrigger.Trigger>
           <Button variant="primary">Button</Button>
         </PopperTrigger.Trigger>
-        <CustomMenu />
+        <PopperTrigger.Menu
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+        >
+          <Typography variant="med12">TEST</Typography>
+        </PopperTrigger.Menu>
+        {/* <CustomMenu /> */}
       </PopperTrigger>
     </div>
   );
@@ -110,5 +117,5 @@ export const Placement: ComponentStory<any> = (args: PlacementProps) => {
 
 Placement.bind({});
 Placement.args = {
-  placement: "bottom",
+  placement: 'bottom',
 };

@@ -2,4 +2,5 @@ export {
   default,
   usePopTriggerContext,
   PopperTriggerContext,
-} from "./PopperTrigger";
+  type IPopperTriggerContext,
+} from './PopperTrigger';

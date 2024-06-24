@@ -19,7 +19,6 @@ export default {
 
 export const Default: ComponentStory<typeof IconButton> = args => (
   <div style={{ width: '100%', padding: '12px' }}>
-    <Button>Test</Button>
     <IconButton {...args}>
       <ICON_Delete />
     </IconButton>

@@ -11,9 +11,10 @@ import {
   useState,
   MouseEvent,
   useEffect,
-} from "react";
+} from 'react';
+import PopMenu from './PopMenu';
 
-interface IPopperTriggerContext {
+export interface IPopperTriggerContext {
   anchorEl: null | HTMLElement;
   setAnchorEl: Dispatch<SetStateAction<HTMLElement | null>>;
 }
@@ -59,7 +60,7 @@ const Trigger = ({ children, onOpen, onClose }: TriggerProps) => {
       if (anchor) onOpen && onOpen();
       else onClose && onClose();
     },
-    [popperTriggerContext]
+    [popperTriggerContext],
   );
 
   return (
@@ -82,6 +83,8 @@ const Trigger = ({ children, onOpen, onClose }: TriggerProps) => {
 };
 
 PopperTrigger.Trigger = Trigger;
+
+PopperTrigger.Menu = PopMenu;
 
 export const usePopTriggerContext = () => {
   let popperTriggerContext = useContext(PopperTriggerContext);

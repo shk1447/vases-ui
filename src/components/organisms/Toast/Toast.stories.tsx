@@ -1,23 +1,23 @@
-import { IconButton } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/system/Stack";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { useState } from "react";
-import Button from "../../atoms/Button";
-import { ReactComponent as CloseIcon } from "./Assets/Close.svg";
-import Toast from "./Toast";
+import { Box, IconButton } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/system/Stack';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { useState } from 'react';
+import Button from '../../atoms/Button';
+import { ReactComponent as CloseIcon } from './Assets/Close.svg';
+import Toast from './Toast';
 
 export default {
-  title: "Vases-UI/organisms/Toast",
+  title: 'Vases-UI/organisms/Toast',
   component: Toast,
   parameters: {
     docs: {
       description: {
         component: `Dialog 입니다.`,
       },
-      source: { type: "code" },
+      source: { type: 'code' },
     },
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 } as ComponentMeta<typeof Toast>;
 
@@ -25,9 +25,9 @@ export const Default: ComponentStory<any> = () => {
   const [open, setOpen] = useState(false);
   const handleClose = (
     event?: React.SyntheticEvent | Event,
-    reason?: string
+    reason?: string,
   ) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
 
@@ -44,7 +44,7 @@ export const Default: ComponentStory<any> = () => {
       <Toast
         open={open}
         onClose={handleClose}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       >
         <Toast.Content
           severity="error"
@@ -57,14 +57,15 @@ export const Default: ComponentStory<any> = () => {
             </>
           }
           action={
-            <IconButton
-              key="close"
-              aria-label="Close"
-              color="inherit"
+            <Box
+              sx={{
+                padding: '4px',
+                cursor: 'pointer',
+              }}
               onClick={handleClose}
             >
               <CloseIcon />
-            </IconButton>
+            </Box>
           }
         />
       </Toast>
