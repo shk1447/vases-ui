@@ -6,10 +6,6 @@ import { useFormControl } from '@mui/material/FormControl';
 const StyledTextField = styled(_TextField)(
   ({ theme, error, disabled, multiline }) => {
     const style = {
-      'label + &': {
-        marginTop: theme.spacing(3),
-      },
-
       '& .MuiOutlinedInput-root': {
         width: '100%',
         height: multiline ? '80px' : '32px',

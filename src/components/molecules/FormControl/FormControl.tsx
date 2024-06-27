@@ -12,7 +12,7 @@ import ColorPicker from './Component/ColorPicker';
 import { Children, cloneElement, isValidElement } from 'react';
 
 const FormControl = ({ children, ...props }: FormControlProps) => (
-  <FORM_CONTROL {...props}>
+  <FORM_CONTROL sx={{ gap: '4px' }} {...props}>
     {Children.map(children, child => {
       if (isValidElement(child)) {
         return cloneElement(child, child.props);

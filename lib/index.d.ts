@@ -179,14 +179,7 @@ declare module '@mui/material/Button' {
         inline: true;
     }
 }
-declare const Button: {
-    ({ ...props }: ButtonProps): JSX.Element;
-    defaultProps: {
-        color: string;
-        variant: string;
-        size: string;
-    };
-};
+declare const Button: ({ ...props }: ButtonProps) => JSX.Element;
 
 interface ButtonGroupProps extends ButtonGroupProps$1 {
 }
@@ -885,7 +878,9 @@ declare const FormControl: {
         Checkbox: (props: _mui_material.FormControlLabelProps) => JSX.Element;
     };
     Calendar: (props: CalendarProps) => JSX.Element;
-    HelperText: () => JSX.Element;
+    HelperText: ({ children }: {
+        children?: react.ReactNode;
+    }) => JSX.Element;
     AutoComplete: (props: AutoCompleteProps) => JSX.Element;
     ColorPicker: ({ hex, onChange, }: {
         hex: string;

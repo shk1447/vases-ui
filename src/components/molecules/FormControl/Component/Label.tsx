@@ -12,13 +12,13 @@ const StyledLabel = styled(_InputLabel)(({ theme, error, disabled }) => ({
   fontSize: '12px',
   lineHeight: '16px',
   transform: 'translate(0, -1.5px)',
+  position: 'relative',
   '&.Mui-error': {
     color: alert[100],
   },
   '&.Mui-disabled': {
     color: grey[80],
   },
-  marginBottom: '24px !important',
 }));
 
 const Label = ({ children }: InputLabelProps) => {

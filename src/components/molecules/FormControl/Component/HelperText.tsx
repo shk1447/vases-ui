@@ -1,6 +1,8 @@
 import { styled } from '@mui/material/styles';
 import _FormHelperText from '@mui/material/FormHelperText';
 import { alert, grey } from '../../../../theme/colors';
+import React, { PropsWithChildren } from 'react';
+
 const StyledHelperText = styled(_FormHelperText)(({ theme, disabled }) => ({
   margin: '2px 0px 0px',
   fontStyle: 'normal', // 12reg
@@ -17,8 +19,8 @@ const StyledHelperText = styled(_FormHelperText)(({ theme, disabled }) => ({
   },
 }));
 
-const HelperText = () => {
-  return <StyledHelperText />;
+const HelperText = ({ children }: PropsWithChildren) => {
+  return <StyledHelperText>{children}</StyledHelperText>;
 };
 
 export default HelperText;

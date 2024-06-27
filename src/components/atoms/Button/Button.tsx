@@ -187,9 +187,5 @@ const Button = ({ ...props }: ButtonProps) => {
 
   return styledButton;
 };
-Button.defaultProps = {
-  color: 'vases_primary',
-  variant: 'primary',
-  size: 'default',
-};
+
 export default Button;
