@@ -2,13 +2,16 @@ import {
   styled,
   Typography as _Typography,
   TypographyProps,
-} from "@mui/material";
+} from '@mui/material';
 
 // Update the Typography's variant prop options
-declare module "@mui/material/Typography" {
+declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     title1: true;
     title2: true;
+    reg10: true;
+    med10: true;
+    bol10: true;
     reg12: true;
     med12: true;
     bol12: true;

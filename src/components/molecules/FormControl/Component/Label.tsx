@@ -1,23 +1,24 @@
-import { useFormControl } from "@mui/material/FormControl";
-import _InputLabel, { InputLabelProps } from "@mui/material/InputLabel";
-import { styled } from "@mui/material/styles";
-import { alert, grey } from "../../../../theme/colors";
+import { useFormControl } from '@mui/material/FormControl';
+import _InputLabel, { InputLabelProps } from '@mui/material/InputLabel';
+import { styled } from '@mui/material/styles';
+import { alert, grey } from '../../../../theme/colors';
 
 const StyledLabel = styled(_InputLabel)(({ theme, error, disabled }) => ({
-  display: "flex",
-  gap: "4px",
-  fontFamily: "Noto Sans KR",
-  fontStyle: "normal",
-  fontWeight: "500",
-  fontSize: "12px",
-  lineHeight: "16px",
-  transform: "translate(0, -1.5px)",
-  "&.Mui-error": {
+  display: 'flex',
+  gap: '4px',
+  fontFamily: 'Noto Sans KR',
+  fontStyle: 'normal',
+  fontWeight: '500',
+  fontSize: '12px',
+  lineHeight: '16px',
+  transform: 'translate(0, -1.5px)',
+  '&.Mui-error': {
     color: alert[100],
   },
-  "&.Mui-disabled": {
+  '&.Mui-disabled': {
     color: grey[80],
   },
+  marginBottom: '24px !important',
 }));
 
 const Label = ({ children }: InputLabelProps) => {

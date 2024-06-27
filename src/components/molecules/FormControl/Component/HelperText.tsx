@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import _FormHelperText from '@mui/material/FormHelperText';
 import { alert, grey } from '../../../../theme/colors';
-const HelperText = styled(_FormHelperText)(({ theme, disabled }) => ({
+const StyledHelperText = styled(_FormHelperText)(({ theme, disabled }) => ({
   margin: '2px 0px 0px',
   fontStyle: 'normal', // 12reg
   fontWeight: '400', // 12reg
@@ -16,5 +16,9 @@ const HelperText = styled(_FormHelperText)(({ theme, disabled }) => ({
     color: grey[80],
   },
 }));
+
+const HelperText = () => {
+  return <StyledHelperText />;
+};
 
 export default HelperText;

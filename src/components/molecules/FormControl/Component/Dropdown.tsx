@@ -90,10 +90,6 @@ const StyleInput = styled(InputBase)(({ theme, error, disabled, size }) => ({
   },
 }));
 const StyledSelect = styled(SELECT)(({ theme }) => ({
-  'label + &': {
-    marginTop: theme.spacing(3),
-  },
-
   '& .MuiSelect-outlined': {
     height: '32px',
     width: '100%',

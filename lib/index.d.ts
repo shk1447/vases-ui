@@ -2,6 +2,9 @@ import * as _mui_material_styles from '@mui/material/styles';
 import { Theme } from '@mui/material/styles';
 export { ThemeProvider } from '@mui/material/styles';
 import { ButtonProps } from '@mui/material/Button';
+import { ButtonGroupProps as ButtonGroupProps$1 } from '@mui/material/ButtonGroup';
+import { ToggleButtonProps as ToggleButtonProps$1 } from '@mui/material/ToggleButton';
+import { ToggleButtonGroupProps as ToggleButtonGroupProps$1 } from '@mui/material/ToggleButtonGroup';
 import { CheckboxProps } from '@mui/material/Checkbox';
 import { ChipProps } from '@mui/material/Chip';
 import { IconButtonProps } from '@mui/material/IconButton';
@@ -30,6 +33,8 @@ import { CardContentProps } from '@mui/material/CardContent';
 import { DialogProps } from '@mui/material/Dialog';
 import { ReactDatePickerProps } from 'react-datepicker';
 import { FormControlProps } from '@mui/material/FormControl';
+import { AppBarProps as AppBarProps$1 } from '@mui/material/AppBar';
+import { ToolbarProps } from '@mui/material/Toolbar';
 import { OptionsObject, SnackbarKey, SnackbarProviderProps } from 'notistack';
 import { SnackbarProps } from '@mui/material/Snackbar';
 
@@ -104,6 +109,9 @@ declare module '@mui/material/styles' {
     interface TypographyVariants {
         title1: React.CSSProperties;
         title2: React.CSSProperties;
+        reg10: React.CSSProperties;
+        med10: React.CSSProperties;
+        bol10: React.CSSProperties;
         reg12: React.CSSProperties;
         med12: React.CSSProperties;
         bol12: React.CSSProperties;
@@ -119,6 +127,9 @@ declare module '@mui/material/styles' {
     interface TypographyVariantsOptions {
         title1: React.CSSProperties;
         title2: React.CSSProperties;
+        reg10: React.CSSProperties;
+        med10: React.CSSProperties;
+        bol10: React.CSSProperties;
         reg12: React.CSSProperties;
         med12: React.CSSProperties;
         bol12: React.CSSProperties;
@@ -176,6 +187,18 @@ declare const Button: {
         size: string;
     };
 };
+
+interface ButtonGroupProps extends ButtonGroupProps$1 {
+}
+declare const ButtonGroup: ({ ...props }: ButtonGroupProps) => JSX.Element;
+
+interface ToggleButtonProps extends ToggleButtonProps$1 {
+}
+declare const ToggleButton: ({ ...props }: ToggleButtonProps) => JSX.Element;
+
+interface ToggleButtonGroupProps extends ToggleButtonGroupProps$1 {
+}
+declare const ToggleButtonGroup: ({ ...props }: ToggleButtonGroupProps) => JSX.Element;
 
 declare const Checkbox: (props: CheckboxProps) => JSX.Element;
 
@@ -437,10 +460,13 @@ interface TooltipProps extends TooltipProps$1 {
 }
 declare const Tooltip: ({ ...props }: TooltipProps) => JSX.Element;
 
-declare module "@mui/material/Typography" {
+declare module '@mui/material/Typography' {
     interface TypographyPropsVariantOverrides {
         title1: true;
         title2: true;
+        reg10: true;
+        med10: true;
+        bol10: true;
         reg12: true;
         med12: true;
         bol12: true;
@@ -655,7 +681,7 @@ declare const FormControl: {
             'aria-modal'?: (boolean | "true" | "false") | undefined;
             'aria-multiline'?: (boolean | "true" | "false") | undefined;
             'aria-multiselectable'?: (boolean | "true" | "false") | undefined;
-            'aria-orientation'?: "horizontal" | "vertical" | undefined;
+            'aria-orientation'?: "vertical" | "horizontal" | undefined;
             'aria-owns'?: string | undefined;
             'aria-placeholder'?: string | undefined;
             'aria-posinset'?: number | undefined;
@@ -845,8 +871,8 @@ declare const FormControl: {
             name?: string | undefined;
             value?: unknown;
             checked?: boolean | undefined;
-            inputRef?: react.Ref<any> | undefined;
             htmlFor?: string | undefined;
+            inputRef?: react.Ref<any> | undefined;
             componentsProps?: {
                 typography?: _mui_material.TypographyProps<"span", {}> | undefined;
             } | undefined;
@@ -859,20 +885,7 @@ declare const FormControl: {
         Checkbox: (props: _mui_material.FormControlLabelProps) => JSX.Element;
     };
     Calendar: (props: CalendarProps) => JSX.Element;
-    HelperText: _emotion_styled.StyledComponent<{
-        children?: react.ReactNode;
-        classes?: Partial<_mui_material.FormHelperTextClasses> | undefined;
-        disabled?: boolean | undefined;
-        error?: boolean | undefined;
-        filled?: boolean | undefined;
-        focused?: boolean | undefined;
-        margin?: "dense" | undefined;
-        required?: boolean | undefined;
-        sx?: _mui_system.SxProps<_mui_material.Theme> | undefined;
-        variant?: "outlined" | "filled" | "standard" | undefined;
-    } & _mui_material_OverridableComponent.CommonProps & Omit<Pick<react.DetailedHTMLProps<react.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>, "key" | "css" | keyof react.HTMLAttributes<HTMLParagraphElement>> & {
-        ref?: ((instance: HTMLParagraphElement | null) => void) | react.RefObject<HTMLParagraphElement> | null | undefined;
-    }, keyof _mui_material_OverridableComponent.CommonProps | "children" | "disabled" | "sx" | "margin" | "variant" | "error" | "required" | "filled" | "focused"> & _mui_system.MUIStyledCommonProps<_mui_material.Theme>, {}, {}>;
+    HelperText: () => JSX.Element;
     AutoComplete: (props: AutoCompleteProps) => JSX.Element;
     ColorPicker: ({ hex, onChange, }: {
         hex: string;
@@ -921,6 +934,13 @@ interface VirtualizedRenderer {
     onRenderItem: (index: number) => react__default.ReactNode;
 }
 declare const VirtualizedRenderer: ({ direction, containerSize, itemCount, refItems, itemSize, overscanSize, onRenderItem, }: VirtualizedRenderer) => JSX.Element;
+
+interface AppBarProps extends AppBarProps$1 {
+}
+interface ToolBarProps extends ToolbarProps {
+}
+declare const AppBar: (props: AppBarProps) => JSX.Element;
+declare const ToolBar: (props: ToolBarProps) => JSX.Element;
 
 declare const Toast: {
     ({ children, ...props }: SnackbarProps): JSX.Element;
@@ -1445,4 +1465,4 @@ declare const useStepperContext: () => IStepperContext | null;
 
 declare const _default: {};
 
-export { Accordion, AccordionDetails, AccordionSummary, Box, type BoxProps, Breadcrumbs, Button, type CalculatedColumn, Card, type CellNavigationMode, type CellRendererProps, CenterLayout, type CenterLayoutProps, Checkbox, type CheckboxFormatterProps, Chip, type CircularProps, type ColSpanArgs, Collapse, type CollapseProps, type Column, index$4 as Columns, type CopyEvent, _default$1 as DataGrid, DataGridDefaultComponentsProvider, type DataGridHandle, type DataGridProps, Dialog, Drawer, type DrawerProps, type EditorProps, index$3 as Editors, type FillEvent, FlexLayout, type FlexLayoutProps, FormControl, type FormatterProps, index$2 as Formatters, type GridComponent, GridLayout, type GroupFormatterProps, type HeaderRendererProps, index$1 as HeaderRenderers, ICON_AccountCircle, ICON_Add, ICON_AddNoneBorder, ICON_AnomalyCheck, ICON_Apply, ICON_Check, ICON_CheckBox_Indeterminate, ICON_CheckBox_Round, ICON_Checkbox, ICON_Circle, ICON_Close, ICON_Collapse, ICON_CollapseAll, ICON_Critical, ICON_Database, ICON_Delete, ICON_Dns, ICON_Donwload, ICON_Drag, ICON_Edit, ICON_EditOff, ICON_EmptyCircle, ICON_Expand, ICON_ExpandAll, ICON_Filter, ICON_Folder, ICON_Info, ICON_Location, ICON_Lock, ICON_Media, ICON_Menu, ICON_More, ICON_NewFile, ICON_NewFolder, ICON_Next, ICON_NoConnect, ICON_Notify, ICON_Open, ICON_OpenWithIcon, ICON_Palette, ICON_Pause, ICON_PhotoCamera, ICON_Play, ICON_Prev, ICON_Record, ICON_Refresh, ICON_Register, ICON_Remove, ICON_Save, ICON_Search, ICON_Setting, ICON_SignalCellular, ICON_Square, ICON_Stop, ICON_Tag, ICON_Tag_Outline, ICON_Training, ICON_Tree, ICON_UploadFile, ICON_Visibility, ICON_VisibilityOff, ICON_VscRefresh, ICON_Warning, type IGridContainer, type IGridLayout, type IPopperTriggerContext, IconButton, ItemContainer, type ItemContainerProps, LinearProgress, LoadingOverlay, type LoadingOverlayProps, type PasteEvent, PopperTrigger, PopperTriggerContext, Progress, type Renderers, type RowHeightArgs, type RowRendererProps, index as RowRenderers, type RowsChangeData, type SelectRowEvent, Slider, type SliderProps, SnackbarProvider, type SortColumn, type SortDirection, type SortIconProps, type SortPriorityProps, type SortStatusProps, Spacer, type SpacerProps, Spinner, type SpinnerProps, Stepper, StepperContext, type SummaryFormatterProps, SwipeableDrawer, type SwipeableDrawerProps, Switch, type SwitchProps, Tab, TabPanel, type TabPanelProps, type TabProps, Tabs, type TabsProps, Toast, Tooltip, Typography, VirtualizedRenderer, alert, black, brand, darkTheme, _default as default, grey, lightTheme, primary, sortIcon, sortPriority, state, success, useFocusRef, usePopTriggerContext, useRowSelection, useSnackbar, useStepperContext, warning, white };
+export { Accordion, AccordionDetails, AccordionSummary, AppBar, type AppBarProps, Box, type BoxProps, Breadcrumbs, Button, ButtonGroup, type ButtonGroupProps, type CalculatedColumn, Card, type CellNavigationMode, type CellRendererProps, CenterLayout, type CenterLayoutProps, Checkbox, type CheckboxFormatterProps, Chip, type CircularProps, type ColSpanArgs, Collapse, type CollapseProps, type Column, index$4 as Columns, type CopyEvent, _default$1 as DataGrid, DataGridDefaultComponentsProvider, type DataGridHandle, type DataGridProps, Dialog, Drawer, type DrawerProps, type EditorProps, index$3 as Editors, type FillEvent, FlexLayout, type FlexLayoutProps, FormControl, type FormatterProps, index$2 as Formatters, type GridComponent, GridLayout, type GroupFormatterProps, type HeaderRendererProps, index$1 as HeaderRenderers, ICON_AccountCircle, ICON_Add, ICON_AddNoneBorder, ICON_AnomalyCheck, ICON_Apply, ICON_Check, ICON_CheckBox_Indeterminate, ICON_CheckBox_Round, ICON_Checkbox, ICON_Circle, ICON_Close, ICON_Collapse, ICON_CollapseAll, ICON_Critical, ICON_Database, ICON_Delete, ICON_Dns, ICON_Donwload, ICON_Drag, ICON_Edit, ICON_EditOff, ICON_EmptyCircle, ICON_Expand, ICON_ExpandAll, ICON_Filter, ICON_Folder, ICON_Info, ICON_Location, ICON_Lock, ICON_Media, ICON_Menu, ICON_More, ICON_NewFile, ICON_NewFolder, ICON_Next, ICON_NoConnect, ICON_Notify, ICON_Open, ICON_OpenWithIcon, ICON_Palette, ICON_Pause, ICON_PhotoCamera, ICON_Play, ICON_Prev, ICON_Record, ICON_Refresh, ICON_Register, ICON_Remove, ICON_Save, ICON_Search, ICON_Setting, ICON_SignalCellular, ICON_Square, ICON_Stop, ICON_Tag, ICON_Tag_Outline, ICON_Training, ICON_Tree, ICON_UploadFile, ICON_Visibility, ICON_VisibilityOff, ICON_VscRefresh, ICON_Warning, type IGridContainer, type IGridLayout, type IPopperTriggerContext, IconButton, ItemContainer, type ItemContainerProps, LinearProgress, LoadingOverlay, type LoadingOverlayProps, type PasteEvent, PopperTrigger, PopperTriggerContext, Progress, type Renderers, type RowHeightArgs, type RowRendererProps, index as RowRenderers, type RowsChangeData, type SelectRowEvent, Slider, type SliderProps, SnackbarProvider, type SortColumn, type SortDirection, type SortIconProps, type SortPriorityProps, type SortStatusProps, Spacer, type SpacerProps, Spinner, type SpinnerProps, Stepper, StepperContext, type SummaryFormatterProps, SwipeableDrawer, type SwipeableDrawerProps, Switch, type SwitchProps, Tab, TabPanel, type TabPanelProps, type TabProps, Tabs, type TabsProps, Toast, ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps, type ToggleButtonProps, ToolBar, type ToolBarProps, Tooltip, Typography, VirtualizedRenderer, alert, black, brand, darkTheme, _default as default, grey, lightTheme, primary, sortIcon, sortPriority, state, success, useFocusRef, usePopTriggerContext, useRowSelection, useSnackbar, useStepperContext, warning, white };

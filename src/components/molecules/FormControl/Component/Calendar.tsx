@@ -19,7 +19,7 @@ import Typography from '@mui/material/Typography';
 
 const CustomInput = forwardRef(({ value, onClick }: TextFieldProps, ref) => {
   return (
-    <FormControl onClick={onClick} style={{ width: '100%', marginTop: '24px' }}>
+    <FormControl onClick={onClick} style={{ width: '100%' }}>
       <FormControl.TextField
         inputRef={ref}
         value={value}

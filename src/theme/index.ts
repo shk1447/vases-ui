@@ -41,6 +41,9 @@ declare module '@mui/material/styles' {
   interface TypographyVariants {
     title1: React.CSSProperties;
     title2: React.CSSProperties;
+    reg10: React.CSSProperties;
+    med10: React.CSSProperties;
+    bol10: React.CSSProperties;
     reg12: React.CSSProperties;
     med12: React.CSSProperties;
     bol12: React.CSSProperties;
@@ -58,6 +61,9 @@ declare module '@mui/material/styles' {
   interface TypographyVariantsOptions {
     title1: React.CSSProperties;
     title2: React.CSSProperties;
+    reg10: React.CSSProperties;
+    med10: React.CSSProperties;
+    bol10: React.CSSProperties;
     reg12: React.CSSProperties;
     med12: React.CSSProperties;
     bol12: React.CSSProperties;

@@ -17,3 +17,4 @@ export * from './FormControl';
 export * from './LoadingOverlay';
 export * from './Tabs';
 export * from './VirtualizedRenderer';
+export * from './AppBar';

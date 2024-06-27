@@ -1,21 +1,17 @@
-import { styled } from "@mui/material/styles";
-import FormGroup, { FormGroupProps } from "@mui/material/FormGroup";
+import { styled } from '@mui/material/styles';
+import FormGroup, { FormGroupProps } from '@mui/material/FormGroup';
 
 import FormControlLabel, {
   FormControlLabelProps,
-} from "@mui/material/FormControlLabel";
+} from '@mui/material/FormControlLabel';
 
-const StyledFormGroup = styled(FormGroup)(({ theme }) => ({
-  "label + &": {
-    marginTop: theme.spacing(3),
-  },
-}));
+const StyledFormGroup = styled(FormGroup)(({ theme }) => ({}));
 const CheckboxGroup = ({ children, ...props }: FormGroupProps) => {
   return <StyledFormGroup {...props}>{children}</StyledFormGroup>;
 };
 
 const CustomFormControl = styled(FormControlLabel)(({ theme }) => ({
-  "&.Mui-disabled .MuiFormControlLabel-label": {
+  '&.Mui-disabled .MuiFormControlLabel-label': {
     opacity: 0.4,
   },
 }));
