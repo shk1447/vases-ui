@@ -13,15 +13,13 @@ const Dialog = (props: CustomDialogProps): JSX.Element => {
   return (
     <MUIDialog {...props} open={open}>
       <Box sx={{ padding: '32px', height: '100%', overflow: 'hidden' }}>
-        <Stack sx={{ height: '100%', gap: '40px' }}>
-          <Stack gap="16px" sx={{ flex: 1 }}>
-            {React.Children.toArray(children).filter(
-              (d: any) =>
-                d.type.name === Dialog.Body.name ||
-                d.type.name === Dialog.Description.name ||
-                d.type.name === Dialog.Title.name,
-            )}
-          </Stack>
+        <Stack gap="16px" sx={{ flex: 1, height: '100%', overflow: 'hidden' }}>
+          {React.Children.toArray(children).filter(
+            (d: any) =>
+              d.type.name === Dialog.Body.name ||
+              d.type.name === Dialog.Description.name ||
+              d.type.name === Dialog.Title.name,
+          )}
           <div>
             {React.Children.toArray(children).filter(
               (d: any) => d.type.name === Dialog.Buttons.name,
@@ -46,7 +44,7 @@ Description.displayName = 'Description';
 Dialog.Description = Description;
 
 const Body = ({ children }: AreaProps) => (
-  <div style={{ overflow: 'auto' }}>{children}</div>
+  <div style={{ overflow: 'auto', height: '100%', flex: 1 }}>{children}</div>
 );
 Body.displayName = 'Body';
 Dialog.Body = Body;

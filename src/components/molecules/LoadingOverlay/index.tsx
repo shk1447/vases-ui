@@ -24,6 +24,7 @@ export interface LoadingOverlayProps {
 
 const StyledContainer = styled.div`
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
 `;
@@ -59,6 +60,7 @@ export const LoadingOverlay = ({
         & > :first-of-type {
           width: 100%;
           height: 100%;
+          overflow: hidden;
         }
         flex: 1;
         z-index: ${active ? 9999999 : 1};
@@ -151,7 +153,7 @@ export const LoadingOverlay = ({
                 variant="med16"
                 color={grey[20]}
                 css={css`
-                  margin-top: 120px;
+                  margin-top: 120px !important;
                 `}
               >
                 {message}

@@ -5,3 +5,4 @@ export * from './Drawer';
 export * from './FlexLayout';
 export * from './GridLayout';
 export * from './SwipeableDrawer';
+export * from './Divider';

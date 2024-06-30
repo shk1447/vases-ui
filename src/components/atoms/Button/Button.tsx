@@ -9,25 +9,25 @@ declare module '@mui/material/Button' {
     vases_warning: true;
     vases_alert: true;
     vases_neutral: true;
-    primary: false;
-    secondary: false;
-    success: false;
-    error: false;
-    info: false;
-    warning: false;
-    inherit: false;
+    primary: true;
+    secondary: true;
+    success: true;
+    error: true;
+    info: true;
+    warning: true;
+    inherit: true;
   }
   interface ButtonPropsSizeOverrides {
-    small: false;
-    medium: false;
-    large: false;
+    small: true;
+    medium: true;
+    large: true;
     default: true;
     compact: true;
   }
   interface ButtonPropsVariantOverrides {
-    contained: false;
-    outlined: false;
-    text: false;
+    contained: true;
+    outlined: true;
+    text: true;
     primary: true;
     secondary: true;
     tertiary: true;
@@ -182,8 +182,20 @@ const StyledButton = styled(_Button)<ButtonProps>(
   }),
 );
 
-const Button = ({ ...props }: ButtonProps) => {
-  const styledButton = <StyledButton {...props}></StyledButton>;
+const Button = (props: ButtonProps) => {
+  const {
+    variant = 'primary',
+    color = 'vases_primary',
+    size = 'compact',
+  } = props;
+  const styledButton = (
+    <StyledButton
+      variant={variant}
+      color={color}
+      size={size}
+      {...props}
+    ></StyledButton>
+  );
 
   return styledButton;
 };

@@ -16,16 +16,15 @@ import { BoxProps as BoxProps$1 } from '@mui/material/Box';
 import * as react from 'react';
 import react__default, { DOMAttributes, PropsWithChildren, ReactNode, ReactElement, RefObject, Key, RefAttributes, Dispatch, SetStateAction } from 'react';
 import { CollapseProps as CollapseProps$1 } from '@mui/material/Collapse';
+import { DividerProps as DividerProps$1 } from '@mui/material/Divider';
 import { LinearProgressProps } from '@mui/material/LinearProgress';
 import { SliderProps as SliderProps$1 } from '@mui/material/Slider';
 import { SwitchProps as SwitchProps$1 } from '@mui/material/Switch';
 import { TooltipProps as TooltipProps$1 } from '@mui/material/Tooltip';
-import * as _mui_material_AccordionDetails from '@mui/material/AccordionDetails';
-import * as _mui_material_ButtonBase_TouchRipple from '@mui/material/ButtonBase/TouchRipple';
-import * as _mui_material_AccordionSummary from '@mui/material/AccordionSummary';
+import { AccordionProps } from '@mui/material/Accordion';
+import { AccordionSummaryProps } from '@mui/material/AccordionSummary';
 import * as _emotion_styled from '@emotion/styled';
 import * as _mui_system from '@mui/system';
-import { AccordionProps } from '@mui/material/Accordion';
 import * as _mui_material_Breadcrumbs from '@mui/material/Breadcrumbs';
 import { CardProps } from '@mui/material/Card';
 import { CardHeaderProps } from '@mui/material/CardHeader';
@@ -153,25 +152,25 @@ declare module '@mui/material/Button' {
         vases_warning: true;
         vases_alert: true;
         vases_neutral: true;
-        primary: false;
-        secondary: false;
-        success: false;
-        error: false;
-        info: false;
-        warning: false;
-        inherit: false;
+        primary: true;
+        secondary: true;
+        success: true;
+        error: true;
+        info: true;
+        warning: true;
+        inherit: true;
     }
     interface ButtonPropsSizeOverrides {
-        small: false;
-        medium: false;
-        large: false;
+        small: true;
+        medium: true;
+        large: true;
         default: true;
         compact: true;
     }
     interface ButtonPropsVariantOverrides {
-        contained: false;
-        outlined: false;
-        text: false;
+        contained: true;
+        outlined: true;
+        text: true;
         primary: true;
         secondary: true;
         tertiary: true;
@@ -179,7 +178,7 @@ declare module '@mui/material/Button' {
         inline: true;
     }
 }
-declare const Button: ({ ...props }: ButtonProps) => JSX.Element;
+declare const Button: (props: ButtonProps) => JSX.Element;
 
 interface ButtonGroupProps extends ButtonGroupProps$1 {
 }
@@ -428,6 +427,10 @@ interface SwipeableDrawerProps extends SwipeableDrawerProps$1 {
 }
 declare const SwipeableDrawer: (props: SwipeableDrawerProps) => JSX.Element;
 
+interface DividerProps extends DividerProps$1 {
+}
+declare const Divider: ({ ...props }: DividerProps) => JSX.Element;
+
 declare const Progress: {
     (): JSX.Element;
     Linear: ({ ...props }: LinearProgressProps) => JSX.Element;
@@ -475,32 +478,9 @@ declare module '@mui/material/Typography' {
 }
 declare const Typography: ({ children, ...props }: TypographyProps) => JSX.Element;
 
-declare const Accordion: _emotion_styled.StyledComponent<AccordionProps & _mui_system.MUIStyledCommonProps<_mui_material_styles.Theme>, {}, {}>;
-declare const AccordionSummary: _emotion_styled.StyledComponent<{
-    children?: react.ReactNode;
-    classes?: Partial<_mui_material_AccordionSummary.AccordionSummaryClasses> | undefined;
-    expandIcon?: react.ReactNode;
-    sx?: _mui_material_styles.SxProps<_mui_material_styles.Theme> | undefined;
-} & Omit<{
-    action?: react.Ref<_mui_material.ButtonBaseActions> | undefined;
-    centerRipple?: boolean | undefined;
-    children?: react.ReactNode;
-    classes?: Partial<_mui_material.ButtonBaseClasses> | undefined;
-    disabled?: boolean | undefined;
-    disableRipple?: boolean | undefined;
-    disableTouchRipple?: boolean | undefined;
-    focusRipple?: boolean | undefined;
-    focusVisibleClassName?: string | undefined;
-    LinkComponent?: react.ElementType<any> | undefined;
-    onFocusVisible?: react.FocusEventHandler<any> | undefined;
-    sx?: _mui_material_styles.SxProps<_mui_material_styles.Theme> | undefined;
-    tabIndex?: number | undefined;
-    TouchRippleProps?: Partial<_mui_material_ButtonBase_TouchRipple.TouchRippleProps> | undefined;
-    touchRippleRef?: react.Ref<_mui_material_ButtonBase_TouchRipple.TouchRippleActions> | undefined;
-}, "classes"> & _mui_material_OverridableComponent.CommonProps & Omit<Pick<react.DetailedHTMLProps<react.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "key" | "css" | keyof react.HTMLAttributes<HTMLDivElement>> & {
-    ref?: ((instance: HTMLDivElement | null) => void) | react.RefObject<HTMLDivElement> | null | undefined;
-}, keyof _mui_material_OverridableComponent.CommonProps | "tabIndex" | "children" | "action" | "centerRipple" | "disabled" | "disableRipple" | "disableTouchRipple" | "focusRipple" | "focusVisibleClassName" | "LinkComponent" | "onFocusVisible" | "sx" | "TouchRippleProps" | "touchRippleRef" | "expandIcon"> & _mui_system.MUIStyledCommonProps<_mui_material_styles.Theme>, {}, {}>;
-declare const AccordionDetails: _emotion_styled.StyledComponent<_mui_material_AccordionDetails.AccordionDetailsProps & _mui_system.MUIStyledCommonProps<_mui_material_styles.Theme>, {}, {}>;
+declare const Accordion: (props: AccordionProps) => JSX.Element;
+declare const AccordionSummary: (props: AccordionSummaryProps) => JSX.Element;
+declare const AccordionDetails: (props: react.PropsWithChildren) => JSX.Element;
 
 declare const Breadcrumbs: _emotion_styled.StyledComponent<{
     children?: react.ReactNode;
@@ -1460,4 +1440,4 @@ declare const useStepperContext: () => IStepperContext | null;
 
 declare const _default: {};
 
-export { Accordion, AccordionDetails, AccordionSummary, AppBar, type AppBarProps, Box, type BoxProps, Breadcrumbs, Button, ButtonGroup, type ButtonGroupProps, type CalculatedColumn, Card, type CellNavigationMode, type CellRendererProps, CenterLayout, type CenterLayoutProps, Checkbox, type CheckboxFormatterProps, Chip, type CircularProps, type ColSpanArgs, Collapse, type CollapseProps, type Column, index$4 as Columns, type CopyEvent, _default$1 as DataGrid, DataGridDefaultComponentsProvider, type DataGridHandle, type DataGridProps, Dialog, Drawer, type DrawerProps, type EditorProps, index$3 as Editors, type FillEvent, FlexLayout, type FlexLayoutProps, FormControl, type FormatterProps, index$2 as Formatters, type GridComponent, GridLayout, type GroupFormatterProps, type HeaderRendererProps, index$1 as HeaderRenderers, ICON_AccountCircle, ICON_Add, ICON_AddNoneBorder, ICON_AnomalyCheck, ICON_Apply, ICON_Check, ICON_CheckBox_Indeterminate, ICON_CheckBox_Round, ICON_Checkbox, ICON_Circle, ICON_Close, ICON_Collapse, ICON_CollapseAll, ICON_Critical, ICON_Database, ICON_Delete, ICON_Dns, ICON_Donwload, ICON_Drag, ICON_Edit, ICON_EditOff, ICON_EmptyCircle, ICON_Expand, ICON_ExpandAll, ICON_Filter, ICON_Folder, ICON_Info, ICON_Location, ICON_Lock, ICON_Media, ICON_Menu, ICON_More, ICON_NewFile, ICON_NewFolder, ICON_Next, ICON_NoConnect, ICON_Notify, ICON_Open, ICON_OpenWithIcon, ICON_Palette, ICON_Pause, ICON_PhotoCamera, ICON_Play, ICON_Prev, ICON_Record, ICON_Refresh, ICON_Register, ICON_Remove, ICON_Save, ICON_Search, ICON_Setting, ICON_SignalCellular, ICON_Square, ICON_Stop, ICON_Tag, ICON_Tag_Outline, ICON_Training, ICON_Tree, ICON_UploadFile, ICON_Visibility, ICON_VisibilityOff, ICON_VscRefresh, ICON_Warning, type IGridContainer, type IGridLayout, type IPopperTriggerContext, IconButton, ItemContainer, type ItemContainerProps, LinearProgress, LoadingOverlay, type LoadingOverlayProps, type PasteEvent, PopperTrigger, PopperTriggerContext, Progress, type Renderers, type RowHeightArgs, type RowRendererProps, index as RowRenderers, type RowsChangeData, type SelectRowEvent, Slider, type SliderProps, SnackbarProvider, type SortColumn, type SortDirection, type SortIconProps, type SortPriorityProps, type SortStatusProps, Spacer, type SpacerProps, Spinner, type SpinnerProps, Stepper, StepperContext, type SummaryFormatterProps, SwipeableDrawer, type SwipeableDrawerProps, Switch, type SwitchProps, Tab, TabPanel, type TabPanelProps, type TabProps, Tabs, type TabsProps, Toast, ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps, type ToggleButtonProps, ToolBar, type ToolBarProps, Tooltip, Typography, VirtualizedRenderer, alert, black, brand, darkTheme, _default as default, grey, lightTheme, primary, sortIcon, sortPriority, state, success, useFocusRef, usePopTriggerContext, useRowSelection, useSnackbar, useStepperContext, warning, white };
+export { Accordion, AccordionDetails, AccordionSummary, AppBar, type AppBarProps, Box, type BoxProps, Breadcrumbs, Button, ButtonGroup, type ButtonGroupProps, type CalculatedColumn, Card, type CellNavigationMode, type CellRendererProps, CenterLayout, type CenterLayoutProps, Checkbox, type CheckboxFormatterProps, Chip, type CircularProps, type ColSpanArgs, Collapse, type CollapseProps, type Column, index$4 as Columns, type CopyEvent, _default$1 as DataGrid, DataGridDefaultComponentsProvider, type DataGridHandle, type DataGridProps, Dialog, Divider, type DividerProps, Drawer, type DrawerProps, type EditorProps, index$3 as Editors, type FillEvent, FlexLayout, type FlexLayoutProps, FormControl, type FormatterProps, index$2 as Formatters, type GridComponent, GridLayout, type GroupFormatterProps, type HeaderRendererProps, index$1 as HeaderRenderers, ICON_AccountCircle, ICON_Add, ICON_AddNoneBorder, ICON_AnomalyCheck, ICON_Apply, ICON_Check, ICON_CheckBox_Indeterminate, ICON_CheckBox_Round, ICON_Checkbox, ICON_Circle, ICON_Close, ICON_Collapse, ICON_CollapseAll, ICON_Critical, ICON_Database, ICON_Delete, ICON_Dns, ICON_Donwload, ICON_Drag, ICON_Edit, ICON_EditOff, ICON_EmptyCircle, ICON_Expand, ICON_ExpandAll, ICON_Filter, ICON_Folder, ICON_Info, ICON_Location, ICON_Lock, ICON_Media, ICON_Menu, ICON_More, ICON_NewFile, ICON_NewFolder, ICON_Next, ICON_NoConnect, ICON_Notify, ICON_Open, ICON_OpenWithIcon, ICON_Palette, ICON_Pause, ICON_PhotoCamera, ICON_Play, ICON_Prev, ICON_Record, ICON_Refresh, ICON_Register, ICON_Remove, ICON_Save, ICON_Search, ICON_Setting, ICON_SignalCellular, ICON_Square, ICON_Stop, ICON_Tag, ICON_Tag_Outline, ICON_Training, ICON_Tree, ICON_UploadFile, ICON_Visibility, ICON_VisibilityOff, ICON_VscRefresh, ICON_Warning, type IGridContainer, type IGridLayout, type IPopperTriggerContext, IconButton, ItemContainer, type ItemContainerProps, LinearProgress, LoadingOverlay, type LoadingOverlayProps, type PasteEvent, PopperTrigger, PopperTriggerContext, Progress, type Renderers, type RowHeightArgs, type RowRendererProps, index as RowRenderers, type RowsChangeData, type SelectRowEvent, Slider, type SliderProps, SnackbarProvider, type SortColumn, type SortDirection, type SortIconProps, type SortPriorityProps, type SortStatusProps, Spacer, type SpacerProps, Spinner, type SpinnerProps, Stepper, StepperContext, type SummaryFormatterProps, SwipeableDrawer, type SwipeableDrawerProps, Switch, type SwitchProps, Tab, TabPanel, type TabPanelProps, type TabProps, Tabs, type TabsProps, Toast, ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps, type ToggleButtonProps, ToolBar, type ToolBarProps, Tooltip, Typography, VirtualizedRenderer, alert, black, brand, darkTheme, _default as default, grey, lightTheme, primary, sortIcon, sortPriority, state, success, useFocusRef, usePopTriggerContext, useRowSelection, useSnackbar, useStepperContext, warning, white };
