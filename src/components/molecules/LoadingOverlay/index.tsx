@@ -152,9 +152,9 @@ export const LoadingOverlay = ({
               <Typography
                 variant="med16"
                 color={grey[20]}
-                css={css`
-                  margin-top: 160px !important;
-                `}
+                sx={{
+                  marginTop: '120px !important',
+                }}
               >
                 {message}
               </Typography>
