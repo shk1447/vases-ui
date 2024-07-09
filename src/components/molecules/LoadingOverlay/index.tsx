@@ -153,7 +153,7 @@ export const LoadingOverlay = ({
                 variant="med16"
                 color={grey[20]}
                 css={css`
-                  margin-top: 120px !important;
+                  margin-top: 160px !important;
                 `}
               >
                 {message}
