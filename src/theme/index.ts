@@ -7,6 +7,7 @@ import {
 import dark from './dark';
 import light from './light';
 import typography from './typography';
+export { useMediaQuery } from '@mui/material';
 
 declare module '@mui/material/styles' {
   interface Theme {

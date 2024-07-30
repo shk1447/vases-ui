@@ -11,6 +11,7 @@ import { IconButtonProps } from '@mui/material/IconButton';
 import * as _mui_material_OverridableComponent from '@mui/material/OverridableComponent';
 import * as _mui_material from '@mui/material';
 import { GridDirection, DrawerProps as DrawerProps$1, SwipeableDrawerProps as SwipeableDrawerProps$1, TypographyProps, TabsProps as TabsProps$1, TabProps as TabProps$1, PopoverOrigin, SxProps, Theme as Theme$1, MenuListProps } from '@mui/material';
+export { useMediaQuery } from '@mui/material';
 import * as react_icons_lib from 'react-icons/lib';
 import { BoxProps as BoxProps$1 } from '@mui/material/Box';
 import * as react from 'react';

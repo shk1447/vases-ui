@@ -1,4 +1,4 @@
-import { black, primary, success, warning, white, alert, grey } from "./colors";
+import { black, primary, success, warning, white, alert, grey } from './colors';
 
 const light = {
   palette: {
@@ -27,10 +27,10 @@ const light = {
       contrastText: white,
     },
     vases_neutral: {
-      main: black,
+      main: white,
       light: grey[100],
       dark: grey[100],
-      contrastText: white,
+      contrastText: black,
     },
   },
 };
