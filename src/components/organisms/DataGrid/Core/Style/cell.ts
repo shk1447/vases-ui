@@ -21,7 +21,7 @@ export const cell = css`
     outline-offset: -2px;
   }
   &[role='columnheader'] {
-    border-inline-end: 1px solid var(--rdg-border-color);
+    // border-inline-end: 1px solid var(--rdg-border-color);
     border-block-end: 1px solid var(--rdg-border-color);
   }
 `;
