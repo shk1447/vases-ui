@@ -6,6 +6,4 @@ export * from './components/atoms/index';
 export * from './components/molecules/index';
 export * from './components/organisms/index';
 
-export default {
-  mui: mui,
-};
+export default mui;
