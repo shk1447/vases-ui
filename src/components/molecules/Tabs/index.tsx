@@ -24,7 +24,6 @@ export const Tabs = (props: TabsProps) => {
       sx={{
         minHeight: '32px',
         maxHeight: '32px',
-        borderBottom: `1px solid ${grey[20]}`,
       }}
       {...props}
     >
