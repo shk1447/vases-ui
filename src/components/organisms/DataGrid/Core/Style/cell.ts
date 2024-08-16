@@ -36,7 +36,10 @@ export const groupcell = css`
   grid-row-start: var(--rdg-grid-row-start);
   background-color: inherit;
   inset-block-start: 36px;
-
+  font-family: 'Noto Sans KR';
+  fontsize: 12px;
+  lineheight: 16px;
+  fontweight: 500;
   white-space: nowrap;
   overflow: hidden;
   overflow: clip;

@@ -94,7 +94,7 @@ export const DefaultHeaderRenderer = <R, SR>({
       priority={priority}
       isCellSelected={isCellSelected}
     >
-      <Typography variant="med14">{column.name}</Typography>
+      {column.name}
     </SortableHeaderCell>
   );
 };
