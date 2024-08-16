@@ -1,9 +1,10 @@
-import { css } from "@emotion/css";
+import { css } from '@emotion/css';
 
-import { useFocusRef } from "../../Core/Hooks";
-import type { HeaderRendererProps } from "../../Core/Types";
-import { useDefaultComponents } from "../../Core/DataGridDefaultComponentsProvider";
-import { ReactComponent as SortIcon } from "../../Assets/Sort.svg";
+import { useFocusRef } from '../../Core/Hooks';
+import type { HeaderRendererProps } from '../../Core/Types';
+import { useDefaultComponents } from '../../Core/DataGridDefaultComponentsProvider';
+import { ReactComponent as SortIcon } from '../../Assets/Sort.svg';
+import { Typography } from '@mui/material';
 const headerSortCell = css`
   cursor: pointer;
   display: flex;
@@ -25,7 +26,7 @@ const headerSortNameClassname = `rdg-header-sort-name ${headerSortName}`;
 
 type SharedHeaderCellProps<R, SR> = Pick<
   HeaderRendererProps<R, SR>,
-  "sortDirection" | "onSort" | "priority" | "isCellSelected"
+  'sortDirection' | 'onSort' | 'priority' | 'isCellSelected'
 >;
 
 interface SortableHeaderCellProps<R, SR> extends SharedHeaderCellProps<R, SR> {
@@ -43,7 +44,7 @@ function SortableHeaderCell<R, SR>({
   const { ref, tabIndex } = useFocusRef<HTMLSpanElement>(isCellSelected);
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLSpanElement>) {
-    if (event.key === " " || event.key === "Enter") {
+    if (event.key === ' ' || event.key === 'Enter') {
       // stop propagation to prevent scrolling
       event.preventDefault();
       onSort(event.ctrlKey || event.metaKey);
@@ -67,7 +68,7 @@ function SortableHeaderCell<R, SR>({
       {sortDirection ? (
         <SortIcon
           style={{
-            transform: sortDirection == "ASC" ? "rotate(180deg)" : "",
+            transform: sortDirection == 'ASC' ? 'rotate(180deg)' : '',
           }}
         />
       ) : (
@@ -93,7 +94,7 @@ export const DefaultHeaderRenderer = <R, SR>({
       priority={priority}
       isCellSelected={isCellSelected}
     >
-      {column.name}
+      <Typography variant="med14">{column.name}</Typography>
     </SortableHeaderCell>
   );
 };
